@@ -1,0 +1,10 @@
+.pageDetailContainer {
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin: 3rem;
+  padding-left: 1.5rem;
+  color: #6f22b3;
+  .pageNameTag {
+    text-transform: capitalize;
+  }
+}
