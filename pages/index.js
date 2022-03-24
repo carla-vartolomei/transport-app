@@ -2,9 +2,10 @@ import React from "react"
 import banner from "../assets/banner.png"
 import Image from "next/image"
 import Link from "next/link"
-import { Container } from "@mui/material"
+import { Container, Paper } from "@mui/material"
 import styles from "../styles/Home.module.scss"
 import PageDetail from "../components/PageDetail"
+import Layout from "../components/Layout"
 
 const pagesName = ["about", "routes", "tickets", "discounts", "contact"]
 
@@ -20,7 +21,7 @@ export default function Home() {
       </Container>
       {pagesName.map((pageName, index) => (
         <PageDetail key={`${index}-${pageName}`} pageName={pageName}>
-          hello
+          <Layout pageName={pageName} />
         </PageDetail>
       ))}
     </>
