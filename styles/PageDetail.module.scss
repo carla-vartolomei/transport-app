@@ -6,5 +6,8 @@
   color: #6f22b3;
   .pageNameTag {
     text-transform: capitalize;
+    &:hover {
+      opacity: 0.75;
+    }
   }
 }
