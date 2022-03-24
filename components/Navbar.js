@@ -7,7 +7,7 @@ import styles from "../styles/Navbar.module.scss"
 
 export default function Navbar() {
   return (
-    <div>
+    <>
       <AppBar position="fixed" className={styles.navbarRoot}>
         <Toolbar className={styles.navbarToolBar}>
           <Typography variant="h5" component="div">
@@ -56,6 +56,6 @@ export default function Navbar() {
           </Box>
         </Toolbar>
       </AppBar>
-    </div>
+    </>
   )
 }

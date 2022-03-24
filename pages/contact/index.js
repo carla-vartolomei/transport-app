@@ -1,5 +1,5 @@
 import React from "react"
 
-export default function index() {
+export default function Contact() {
   return <h1>Contact</h1>
 }

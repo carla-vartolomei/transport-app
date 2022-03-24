@@ -6,7 +6,7 @@ export default function PageDetail({ pageName }) {
   return (
     <div className={styles.pageDetailContainer}>
       <h1>
-        <Link href={`${pageName}`}>
+        <Link href={`/${pageName}`}>
           <a className={styles.pageNameTag}>{pageName}</a>
         </Link>
       </h1>
