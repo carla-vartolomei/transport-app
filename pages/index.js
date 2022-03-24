@@ -12,18 +12,13 @@ export default function Home() {
       <Container fixed className={styles.containerImage}>
         <Link href="/about">
           <a>
-            <Image
-              src={banner}
-              alt="Banner"
-              width={900}
-              height={450}
-              quality={100}
-              priority
-            />
+            <Image src={banner} alt="Banner" quality={100} priority />
           </a>
         </Link>
       </Container>
-      <PageDetail pageName="about" />
+      <PageDetail pageName="about">
+        <h1>hello</h1>
+      </PageDetail>
       <PageDetail pageName="routes" />
       <PageDetail pageName="tickets" />
       <PageDetail pageName="discounts" />

@@ -2,7 +2,7 @@ import React from "react"
 import Link from "next/link"
 import styles from "../styles/PageDetail.module.scss"
 
-export default function PageDetail({ pageName }) {
+export default function PageDetail({ pageName, children }) {
   return (
     <div className={styles.pageDetailContainer}>
       <h1>
@@ -10,6 +10,7 @@ export default function PageDetail({ pageName }) {
           <a className={styles.pageNameTag}>{pageName}</a>
         </Link>
       </h1>
+      {children}
     </div>
   )
 }
