@@ -3,8 +3,10 @@ import banner from "../assets/banner.png"
 import Image from "next/image"
 import Link from "next/link"
 import { Container } from "@mui/material"
-import styles from "../styles/Home.module.css"
+import styles from "../styles/Home.module.scss"
 import PageDetail from "../components/PageDetail"
+
+const pagesName = ["about", "routes", "tickets", "discounts", "contact"]
 
 export default function Home() {
   return (
@@ -16,13 +18,11 @@ export default function Home() {
           </a>
         </Link>
       </Container>
-      <PageDetail pageName="about">
-        <h1>hello</h1>
-      </PageDetail>
-      <PageDetail pageName="routes" />
-      <PageDetail pageName="tickets" />
-      <PageDetail pageName="discounts" />
-      <PageDetail pageName="contact" />
+      {pagesName.map((pageName, index) => (
+        <PageDetail key={`${index}-${pageName}`} pageName={pageName}>
+          hello
+        </PageDetail>
+      ))}
     </>
   )
 }
