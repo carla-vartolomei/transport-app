@@ -1,10 +1,13 @@
 import React from "react"
-import Circle from "./Circle"
+import AboutLayout from "./about-layout/AboutLayout"
+import RoutesLayout from "./routes-layout/RoutesLayout"
 
 const Layout = ({ pageName }) => {
   switch (pageName) {
     case "about":
-      return <Circle />
+      return <AboutLayout />
+    case "routes":
+      return <RoutesLayout />
     default:
       return <div>hello</div>
   }

@@ -1,0 +1,40 @@
+.sectionDescription {
+  margin: 0 1.5rem 2.5rem 1.5rem;
+  color: #242222;
+  font-weight: 350;
+  font-size: 18px;
+  text-align: justify;
+  text-indent: 2rem;
+}
+
+.mainSection {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+  .sectionElement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    .circle {
+      border-radius: 50%;
+      width: 10rem;
+      height: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: whitesmoke;
+      color: #6f22b3;
+      .circleIcon {
+        font-size: 4rem;
+      }
+    }
+    .detailIcon {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: #6f22b3;
+      text-transform: uppercase;
+    }
+  }
+}

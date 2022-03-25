@@ -1,0 +1,15 @@
+.scrollBar {
+  overflow: auto;
+  .boxRoutes {
+    display: flex;
+    justify-content: space-around;
+    width: 200rem;
+    .cardRout {
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+      width: 25em;
+      height: 20rem;
+      background-color: whitesmoke;
+    }
+  }
+}

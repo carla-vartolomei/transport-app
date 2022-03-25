@@ -4,11 +4,9 @@ import styles from "../styles/Footer.module.scss"
 
 function Footer() {
   return (
-    <AppBar position="static" className={styles.footerRoot}>
-      <Toolbar>
-        <Typography>&copy; All rights reserved</Typography>
-      </Toolbar>
-    </AppBar>
+    <footer className={styles.footerRoot}>
+      <p className={styles.footerText}>&copy; All rights reserved</p>
+    </footer>
   )
 }
 
