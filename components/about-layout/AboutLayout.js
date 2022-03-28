@@ -2,7 +2,7 @@
 import React from "react"
 import styles from "../../styles/IconSection.module.scss"
 import IconSection from "./IconSection"
-import data from "../../assets/iconSectionList"
+import data from "../../scripts/iconSectionList"
 
 export default function AboutLayout() {
   return (

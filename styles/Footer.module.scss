@@ -1,14 +1,15 @@
+@import "./colors.scss";
+
 .footerRoot {
-  background-color: #242222;
+  background-color: $dark-color;
   display: flex;
   align-items: center;
   justify-content: center;
   .footerText {
-    color: whitesmoke;
+    color: $smoke-color;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 400;
-    font-size: 1.2rem;
     line-height: 1rem;
     letter-spacing: 0.1rem;
+    text-transform: uppercase;
   }
 }

@@ -1,11 +1,16 @@
+@import "./colors.scss";
+
 .pageDetailContainer {
-  border-bottom: 0.1rem solid rgb(129, 128, 128);
   box-sizing: border-box;
   margin: 0 3rem;
   padding-left: 1.5rem;
-  color: #6f22b3;
+  padding-bottom: 2rem;
+  color: $purple-color;
+  border-top: 5rem solid $smoke-color;
+  border-top-width: medium;
   .pageNameTag {
     text-transform: capitalize;
+    margin-bottom: 0;
     &:hover {
       opacity: 0.75;
     }

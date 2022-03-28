@@ -1,10 +1,18 @@
+@import "./colors.scss";
+
 .containerImage {
   width: 100%;
   display: flex;
   justify-content: center;
   transition: 0.5s ease-in-out;
-
   &:hover {
     transform: scale(1.05);
   }
+}
+
+.textSearchBox {
+  margin-left: 3rem;
+  margin-top: 2rem;
+  color: $dark-color;
+  opacity: 0.8;
 }

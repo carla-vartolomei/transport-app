@@ -1,0 +1,16 @@
+@import "./colors.scss";
+
+.contactDetails {
+  height: 100%;
+  background-color: $smoke-color;
+  padding: 1rem;
+  .contactTitle {
+    text-indent: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+  }
+  .contactInfoList {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}

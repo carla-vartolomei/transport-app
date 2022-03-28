@@ -1,0 +1,18 @@
+@import "./colors.scss";
+
+.discountsRoot {
+  .discountsAccordion {
+    background-color: $smoke-color;
+    .discountsAccordionTitle {
+      color: $purple-color;
+      font-weight: bold;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+    }
+    .discountsAccordionDetails {
+      text-indent: 1rem;
+      color: $dark-color;
+    }
+  }
+}

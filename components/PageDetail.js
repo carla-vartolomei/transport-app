@@ -10,7 +10,7 @@ export default function PageDetail({ pageName, children }) {
           <a className={styles.pageNameTag}>{pageName}</a>
         </Link>
       </h1>
-      {children}
+      <div className={styles.pageNameSection}> {children} </div>
     </div>
   )
 }

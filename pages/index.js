@@ -7,7 +7,7 @@ import styles from "../styles/Home.module.scss"
 import PageDetail from "../components/PageDetail"
 import Layout from "../components/Layout"
 
-const pagesName = ["about", "routes", "tickets", "discounts", "contact"]
+const pagesName = ["about", "routes", "discounts", "contact"]
 
 export default function Home() {
   return (
@@ -19,11 +19,16 @@ export default function Home() {
           </a>
         </Link>
       </Container>
-      {pagesName.map((pageName, index) => (
-        <PageDetail key={`${index}-${pageName}`} pageName={pageName}>
-          <Layout pageName={pageName} />
-        </PageDetail>
-      ))}
+      <h1 className={styles.textSearchBox}>
+        This is a section for the search box!!
+      </h1>
+      <div>
+        {pagesName.map((pageName, index) => (
+          <PageDetail key={`${index}-${pageName}`} pageName={pageName}>
+            <Layout pageName={pageName} />
+          </PageDetail>
+        ))}
+      </div>
     </>
   )
 }

@@ -1,5 +1,7 @@
+@import "./colors.scss";
+
 .navbarRoot {
-  background-color: #242222;
+  background-color: $dark-color;
   .navbarToolBar {
     display: flex;
     flex-direction: row;

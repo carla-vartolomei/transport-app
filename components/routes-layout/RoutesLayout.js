@@ -1,19 +1,27 @@
 import React from "react"
-import { Paper } from "@mui/material"
-import styles from "../../styles/RoutesLayout.module.scss"
 import { Box } from "@mui/system"
+import { CardRoute } from "./CardRoute"
+import styles from "../../styles/RoutesLayout.module.scss"
+import data from "../../scripts/routes"
 
 function RoutesLayout() {
+  const startPoint = data.startPoint
+  const endPoint = data.endPoint
   return (
     <>
       <div className={styles.scrollBar}>
         <Box className={styles.boxRoutes}>
-          <Paper elevation={3} className={styles.cardRout} />
-          <Paper elevation={3} className={styles.cardRout} />
-          <Paper elevation={3} className={styles.cardRout} />
-          <Paper elevation={3} className={styles.cardRout} />
-          <Paper elevation={3} className={styles.cardRout} />
-          <Paper elevation={3} className={styles.cardRout} />
+          {endPoint.map((item, index) => {
+            return (
+              <CardRoute
+                key={index.toString()}
+                startPoint={startPoint.name}
+                endPoint={item.name}
+                contactStartPoint={startPoint.phone}
+                contactEndPoint={item.phone}
+              />
+            )
+          })}
         </Box>
       </div>
     </>
