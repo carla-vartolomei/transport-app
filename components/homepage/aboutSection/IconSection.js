@@ -1,5 +1,5 @@
 import { Paper } from "@mui/material"
-import styles from "../../styles/IconSection.module.scss"
+import styles from "./IconSection.module.scss"
 
 import React from "react"
 

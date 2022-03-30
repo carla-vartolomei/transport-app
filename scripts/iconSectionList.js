@@ -4,7 +4,7 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined"
 import LocalActivityOutlinedIcon from "@mui/icons-material/LocalActivityOutlined"
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined"
 import DirectionsBusOutlinedIcon from "@mui/icons-material/DirectionsBusOutlined"
-import styles from "../styles/IconSection.module.scss"
+import styles from "../components/homepage/aboutSection/IconSection.module.scss"
 
 const data = [
   {

@@ -1,12 +1,12 @@
 import React from "react"
-import styles from "../../styles/DiscountsLayout.module.scss"
-import AccordionLayout from "./AccordionLayout"
-import data from "../../scripts/accordionInfo"
+import styles from "./DiscountSection.module.scss"
+import Accordion from "./Accordion"
+import data from "../../../scripts/accordionInfo"
 import { Box, Container, Grid, Paper } from "@mui/material"
 import Image from "next/image"
-import discountImage from "../../assets/discounts-image.png"
+import discountImage from "../../../assets/discounts-image.png"
 
-function DiscountsLayout() {
+function DiscountSection() {
   return (
     <Grid container spacing={2}>
       <Grid item xs={2}>
@@ -24,7 +24,7 @@ function DiscountsLayout() {
         <Box className={styles.boxAccordions}>
           <div className={styles.discountsRoot}>
             {data.map((item, index) => (
-              <AccordionLayout
+              <Accordion
                 key={index.toString()}
                 accordionTitle={item.title}
                 accordionDetails={item.details}
@@ -37,4 +37,4 @@ function DiscountsLayout() {
   )
 }
 
-export default DiscountsLayout
+export default DiscountSection

@@ -1,8 +1,8 @@
 import React from "react"
 import { Paper, Button, Container } from "@mui/material"
 import Image from "next/image"
-import styles from "../../styles/RoutesLayout.module.scss"
-import busIcon from "../../assets/bus-icon.png"
+import styles from "./RouteSection.module.scss"
+import busIcon from "../../../assets/bus-icon.png"
 
 export function CardRoute({
   startPoint,

@@ -4,9 +4,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { Container } from "@mui/material"
 import styles from "../styles/Home.module.scss"
-import PageDetail from "../components/PageDetail"
-import HomePageSection from "../components/HomePageSection"
-import SearchBox from "../components/search-box/SearchBox"
+import PageDetail from "../components/homepage/PageDetail"
+import HomePageSection from "../components/homepage/HomePageSection"
+import SearchBox from "../components/homepage/searchBox/SearchBox"
 
 const pagesName = ["about", "routes", "discounts", "contact"]
 

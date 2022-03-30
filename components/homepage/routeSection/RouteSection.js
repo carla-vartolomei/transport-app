@@ -1,10 +1,10 @@
 import React from "react"
 import { Box } from "@mui/system"
 import { CardRoute } from "./CardRoute"
-import styles from "../../styles/RoutesLayout.module.scss"
-import data from "../../scripts/busRoutes"
+import styles from "./RouteSection.module.scss"
+import data from "../../../scripts/busRoutes"
 
-function RoutesLayout() {
+function RouteSection() {
   const startPoint = data.startPoint
   const endPoint = data.endPoint
   return (
@@ -28,4 +28,4 @@ function RoutesLayout() {
   )
 }
 
-export default RoutesLayout
+export default RouteSection

@@ -1,11 +1,11 @@
 import React from "react"
 import { Grid, Paper } from "@mui/material"
-import styles from "../../styles/ContactLayout.module.scss"
+import styles from "./ContactSection.module.scss"
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined"
 import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined"
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined"
 
-function ContactLayout() {
+function ContactSection() {
   return (
     <div className={styles.contactSection}>
       <Grid container spacing={2}>
@@ -49,4 +49,4 @@ function ContactLayout() {
   )
 }
 
-export default ContactLayout
+export default ContactSection

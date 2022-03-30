@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
-import styles from "../../styles/DiscountsLayout.module.scss"
+import styles from "./DiscountSection.module.scss"
 
 function AccordionLayout({ accordionTitle, accordionDetails }) {
   return (

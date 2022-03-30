@@ -1,14 +1,7 @@
 import React from "react"
-import styles from "../../styles/SearchBox.module.scss"
+import styles from "./SearchBox.module.scss"
 import { Box } from "@mui/system"
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material"
+import { Button, TextField } from "@mui/material"
 import { LocalizationProvider, MobileDatePicker, MobileTimePicker } from "@mui/lab"
 import AdapterDateFns from "@mui/lab/AdapterDateFns"
 
