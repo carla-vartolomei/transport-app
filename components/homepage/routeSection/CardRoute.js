@@ -3,6 +3,7 @@ import { Paper, Button, Container } from "@mui/material"
 import Image from "next/image"
 import styles from "./RouteSection.module.scss"
 import busIcon from "../../../assets/bus-icon.png"
+import Link from "next/link"
 
 export function CardRoute({
   startPoint,
@@ -22,7 +23,14 @@ export function CardRoute({
         />
       </Container>
       <Button variant="outlined" className={styles.buttonRoute}>
-        more info
+        <Link
+          href={`/routes/${startPoint.toLowerCase()}-${endPoint
+            .toLowerCase()
+            .split(" ")
+            .join("")}`}
+        >
+          <a>more info</a>
+        </Link>
       </Button>
       {contactEndPoint ? (
         <>
