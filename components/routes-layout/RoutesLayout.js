@@ -2,7 +2,7 @@ import React from "react"
 import { Box } from "@mui/system"
 import { CardRoute } from "./CardRoute"
 import styles from "../../styles/RoutesLayout.module.scss"
-import data from "../../scripts/routes"
+import data from "../../scripts/busRoutes"
 
 function RoutesLayout() {
   const startPoint = data.startPoint

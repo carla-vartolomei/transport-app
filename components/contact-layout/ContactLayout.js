@@ -7,7 +7,7 @@ import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined"
 
 function ContactLayout() {
   return (
-    <div>
+    <div className={styles.contactSection}>
       <Grid container spacing={2}>
         <Grid item xs={4}>
           <Paper elevation={3} className={styles.contactDetails}>
@@ -41,7 +41,7 @@ function ContactLayout() {
             <iframe
               className={styles.mapSection}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2712.585244635353!2d27.575801315579447!3d47.16597697915797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafb7aed19103f%3A0xe34a55fae6bd134b!2sStrada%20Arcu%201%2C%20Ia%C8%99i%20700259!5e0!3m2!1sro!2sro!4v1648471616456!5m2!1sro!2sro"
-            ></iframe>
+            />
           </div>
         </Grid>
       </Grid>

@@ -2,10 +2,11 @@ import React from "react"
 import banner from "../assets/banner.png"
 import Image from "next/image"
 import Link from "next/link"
-import { Container, Paper } from "@mui/material"
+import { Container } from "@mui/material"
 import styles from "../styles/Home.module.scss"
 import PageDetail from "../components/PageDetail"
-import Layout from "../components/Layout"
+import HomePageSection from "../components/HomePageSection"
+import SearchBox from "../components/search-box/SearchBox"
 
 const pagesName = ["about", "routes", "discounts", "contact"]
 
@@ -19,13 +20,11 @@ export default function Home() {
           </a>
         </Link>
       </Container>
-      <h1 className={styles.textSearchBox}>
-        This is a section for the search box!!
-      </h1>
+      <SearchBox />
       <div>
         {pagesName.map((pageName, index) => (
           <PageDetail key={`${index}-${pageName}`} pageName={pageName}>
-            <Layout pageName={pageName} />
+            <HomePageSection pageName={pageName} />
           </PageDetail>
         ))}
       </div>
