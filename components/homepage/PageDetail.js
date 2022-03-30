@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "next/link"
-import styles from "../../styles/PageDetail.module.scss"
+import styles from "./PageDetail.module.scss"
 
 export default function PageDetail({ pageName, children }) {
   return (

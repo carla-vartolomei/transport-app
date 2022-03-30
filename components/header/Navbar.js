@@ -3,7 +3,7 @@ import { Box } from "@mui/system"
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus"
 import Link from "next/link"
 import React from "react"
-import styles from "../styles/Navbar.module.scss"
+import styles from "./Navbar.module.scss"
 
 export default function Navbar() {
   return (
