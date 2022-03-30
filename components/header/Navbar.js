@@ -5,6 +5,8 @@ import Link from "next/link"
 import React from "react"
 import styles from "./Navbar.module.scss"
 
+const pages = ["home", "about", "routes", "tickets", "discounts", "contact"]
+
 export default function Navbar() {
   return (
     <>
@@ -23,36 +25,17 @@ export default function Navbar() {
             </Link>
           </Typography>
           <Box className={styles.navbarOptions}>
-            <Button color="inherit">
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </Button>
-            <Button color="inherit">
-              <Link href="/about">
-                <a>About</a>
-              </Link>
-            </Button>
-            <Button color="inherit">
-              <Link href="/routes">
-                <a>Routes</a>
-              </Link>
-            </Button>
-            <Button color="inherit">
-              <Link href="/tickets">
-                <a>Tickets</a>
-              </Link>
-            </Button>
-            <Button color="inherit">
-              <Link href="/discounts">
-                <a>Discounts</a>
-              </Link>
-            </Button>
-            <Button color="inherit">
-              <Link href="/contact">
-                <a>Contact</a>
-              </Link>
-            </Button>
+            {pages.map((item, index) => {
+              let path = ""
+              item === "home" ? (path = "/") : (path = `/${item}`)
+              return (
+                <Button key={index.toString()} color="inherit">
+                  <Link href={path}>
+                    <a>{item}</a>
+                  </Link>
+                </Button>
+              )
+            })}
           </Box>
         </Toolbar>
       </AppBar>
