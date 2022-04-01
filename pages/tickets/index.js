@@ -1,5 +1,11 @@
 import React from "react"
+import Banner from "../../components/banner/Banner"
 
 export default function index() {
-  return <h1>Tickets</h1>
+  return (
+    <>
+      <Banner />
+      <h1>Tickets</h1>
+    </>
+  )
 }
