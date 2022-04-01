@@ -12,18 +12,13 @@ export default function Navbar() {
     <>
       <AppBar layout="responsive" position="fixed" className={styles.navbarRoot}>
         <Toolbar className={styles.navbarToolBar}>
-          <Typography variant="h5" component="div">
-            <IconButton edge="start" color="inherit" aria-label="menu">
-              <Link href="/">
-                <a>
-                  <DirectionsBusIcon />
-                </a>
-              </Link>
-            </IconButton>
+          <IconButton edge="start" color="inherit" aria-label="menu">
             <Link href="/">
-              <a> Intertrans Company</a>
+              <a>
+                <DirectionsBusIcon />
+              </a>
             </Link>
-          </Typography>
+          </IconButton>
           <Box className={styles.navbarOptions}>
             {pages.map((item, index) => {
               let path = ""

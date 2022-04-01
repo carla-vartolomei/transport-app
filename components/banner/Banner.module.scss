@@ -10,20 +10,11 @@
   align-items: center;
   justify-content: center;
   color: $smoke-color;
-  .bannerTitleSection {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    .bannerTitleIcon {
-      align-self: flex-end;
-      margin: 0.5rem;
-      font-size: 2rem;
-    }
-    .bannerTitle {
-      margin: 0;
-      font-size: 3rem;
-      letter-spacing: 0.1rem;
-    }
+
+  .bannerTitle {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
   }
 
   .bannerSubTitle {
