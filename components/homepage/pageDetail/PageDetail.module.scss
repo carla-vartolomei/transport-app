@@ -12,6 +12,7 @@
     text-transform: capitalize;
     margin-bottom: 0;
     &:hover {
+      color: $dark-color;
       opacity: 0.75;
     }
   }
