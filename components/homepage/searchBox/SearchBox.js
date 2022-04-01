@@ -60,7 +60,7 @@ export default function SearchBox() {
           />
         </LocalizationProvider>
         <Button className={styles.searchBoxButton} variant="outlined">
-          Search route
+          search route
         </Button>
       </Box>
     </div>

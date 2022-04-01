@@ -10,10 +10,10 @@ const pages = ["home", "about", "routes", "tickets", "discounts", "contact"]
 export default function Navbar() {
   return (
     <>
-      <AppBar position="fixed" className={styles.navbarRoot}>
+      <AppBar layout="responsive" position="fixed" className={styles.navbarRoot}>
         <Toolbar className={styles.navbarToolBar}>
           <Typography variant="h5" component="div">
-            <IconButton size="large" edge="start" color="inherit" aria-label="menu">
+            <IconButton edge="start" color="inherit" aria-label="menu">
               <Link href="/">
                 <a>
                   <DirectionsBusIcon />
