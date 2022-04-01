@@ -1,6 +1,9 @@
 @import "../../styles/colors.scss";
 
 .footerRoot {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
   background-color: $dark-color;
   display: flex;
   align-items: center;
