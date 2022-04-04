@@ -1,7 +1,7 @@
 import React from "react"
 import { Paper } from "@mui/material"
 import styles from "./InfoCard.module.scss"
-import { contactDescription, contactData } from "../homepage/contactSection/data"
+import { contactDescription, contactData } from "../../homepage/contactSection/data"
 
 function InfoCard() {
   return (

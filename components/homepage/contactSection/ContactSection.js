@@ -2,7 +2,7 @@ import React from "react"
 import { Grid, Paper } from "@mui/material"
 import styles from "./ContactSection.module.scss"
 import { iframePath } from "./data"
-import InfoCard from "../../contact-page/InfoCard"
+import InfoCard from "../../contact-page/info-card/InfoCard"
 
 function ContactSection() {
   return (
