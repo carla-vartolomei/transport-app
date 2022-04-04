@@ -1,7 +1,7 @@
-import { Box, Container } from "@material-ui/core"
+import Box from "@material-ui/core"
 import React from "react"
 import Banner from "../../components/banner/Banner"
-import Form from "../../components/contact-page/Form"
+import Form from "../../components/contact-page/form/Form"
 import InfoCard from "../../components/contact-page/InfoCard"
 import styles from "../../styles/Contact.module.scss"
 import FacebookIcon from "@mui/icons-material/Facebook"
@@ -27,33 +27,36 @@ export default function Contact() {
         <p>We are active on social media!</p>
         <p>Go follow us on Facebook, Instagram, Twitter, Youtube and LinkedIn!</p>
         <div className={styles.socialMediaIcons}>
-          <IconButton>
-            <a href="https://www.facebook.com/">
-              <FacebookIcon fontSize="large" />
-            </a>
-          </IconButton>
-          <IconButton>
-            <a href="https://www.instagram.com/">
-              <InstagramIcon fontSize="large" />
-            </a>
-          </IconButton>
-          <IconButton>
-            <a href="https://www.twitter.com/">
-              <TwitterIcon fontSize="large" />
-            </a>
-          </IconButton>
-          <IconButton>
-            <a href="https://www.youtube.com/">
-              <YouTubeIcon fontSize="large" />
-            </a>
-          </IconButton>
-          <IconButton>
-            <a href="https://www.linkedin.com/">
-              <LinkedInIcon fontSize="large" />
-            </a>
-          </IconButton>
+          {data.map((item, index) => (
+            <IconButton key={index.toString()}>
+              <a href={item.link}>{item.icon}</a>
+            </IconButton>
+          ))}
         </div>
       </div>
     </div>
   )
 }
+
+const data = [
+  {
+    link: "https://www.facebook.com/",
+    icon: <FacebookIcon fontSize="large" />,
+  },
+  {
+    link: "https://www.instagram.com/",
+    icon: <InstagramIcon fontSize="large" />,
+  },
+  {
+    link: "https://www.twitter.com/",
+    icon: <TwitterIcon fontSize="large" />,
+  },
+  {
+    link: "https://www.youtube.com/",
+    icon: <YouTubeIcon fontSize="large" />,
+  },
+  {
+    link: "https://www.linkedin.com/",
+    icon: <LinkedInIcon fontSize="large" />,
+  },
+]
