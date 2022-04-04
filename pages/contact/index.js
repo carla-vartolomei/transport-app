@@ -4,10 +4,15 @@ import Banner from "../../components/banner/Banner"
 import Form from "../../components/contact-page/Form"
 import InfoCard from "../../components/contact-page/InfoCard"
 import styles from "../../styles/Contact.module.scss"
+import FacebookIcon from "@mui/icons-material/Facebook"
+import InstagramIcon from "@mui/icons-material/Instagram"
+import TwitterIcon from "@mui/icons-material/Twitter"
+import YouTubeIcon from "@mui/icons-material/YouTube"
+import { IconButton } from "@mui/material"
 
 export default function Contact() {
   return (
-    <>
+    <div className={styles.contactRoot}>
       <Banner />
       <h1 className={styles.pageTitle}>Contact us</h1>
       <Form />
@@ -16,7 +21,33 @@ export default function Contact() {
           <InfoCard />
         </Box>
       </div>
-      <div className={styles.backDiv}></div>
-    </>
+      <div className={styles.backDiv}>
+        <h1>get in touch</h1>
+        <p>We are active on social media!</p>
+        <p>Go follow us on Facebook, Instagram, Twitter and Youtube!</p>
+        <div className={styles.socialMediaIcons}>
+          <IconButton>
+            <a href="https://www.facebook.com/">
+              <FacebookIcon fontSize="large" />
+            </a>
+          </IconButton>
+          <IconButton>
+            <a href="https://www.instagram.com/">
+              <InstagramIcon fontSize="large" />
+            </a>
+          </IconButton>
+          <IconButton>
+            <a href="https://www.twitter.com/">
+              <TwitterIcon fontSize="large" />
+            </a>
+          </IconButton>
+          <IconButton>
+            <a href="https://www.youtube.com/">
+              <YouTubeIcon fontSize="large" />
+            </a>
+          </IconButton>
+        </div>
+      </div>
+    </div>
   )
 }

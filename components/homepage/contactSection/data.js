@@ -3,8 +3,8 @@ import MailOutlinedIcon from "@mui/icons-material/MailOutlined"
 import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined"
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined"
 
-export const contactDescription = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, nobis
-incidunt ut distinctio itaque sed odio qui in quibusdam animi quasi cum corporis earum suscipit provident repudiandae excepturi sunt aspernatur?`
+export const contactDescription =
+  "We love questions and feedback and we are always happy to help! Here are some ways to contact us."
 
 export const contactData = [
   {

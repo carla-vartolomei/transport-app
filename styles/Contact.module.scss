@@ -1,28 +1,59 @@
 @import "./colors.scss";
 
-.pageTitle {
-  margin-left: 5rem;
-  margin-bottom: 2rem;
-  padding-left: 0.5rem;
-  padding-bottom: 0.5rem;
-  color: $dark-color;
-  width: 25%;
-  border-bottom: 0.1rem $purple-color solid;
-}
-.backDiv {
-  height: 20rem;
-  background-color: $purple-color;
-}
+.contactRoot {
+  background-color: $smoke-color;
 
-.infoContainer {
-  z-index: 1;
-  margin-top: 2rem;
-  margin-right: 8rem;
-  display: flex !important;
-  flex-direction: row-reverse;
-  .infoBox {
-    background-color: $smoke-color;
-    width: 50%;
-    margin-bottom: -16rem;
+  .pageTitle {
+    margin-left: 5rem;
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: $dark-color;
+    width: 25%;
+    border-bottom: 0.15rem $purple-color solid;
+  }
+
+  .backDiv {
+    height: 20rem;
+    background-color: $purple-color;
+    h1 {
+      width: 35%;
+      color: $smoke-color;
+      padding: 2.5rem;
+      padding-bottom: 0;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+    p {
+      width: 35%;
+      color: $dark-color;
+      padding-left: 3rem;
+      margin: 0;
+      font-weight: 700;
+    }
+    .socialMediaIcons {
+      width: 35%;
+      margin-top: 1rem;
+      margin-left: 5rem;
+      color: $smoke-color;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  .infoContainer {
+    z-index: 1;
+    margin-top: 2rem;
+    margin-right: 8rem;
+    display: flex !important;
+    flex-direction: row-reverse;
+    .infoBox {
+      background-color: $smoke-color;
+      width: 50%;
+      margin-bottom: -16rem;
+    }
   }
 }
