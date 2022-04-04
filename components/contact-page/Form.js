@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Box, Button, TextField } from "@material-ui/core"
 import styles from "./Form.module.scss"
 
-const intialState = {
+const initialState = {
   firstName: "",
   lastName: "",
   email: "",
@@ -10,17 +10,16 @@ const intialState = {
 }
 
 function Form() {
-  const [formState, setFormState] = useState(intialState)
+  const [formState, setFormState] = useState(initialState)
 
   const onChangeHandler = (e) => {
-    const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
     setFormState({
       ...formState,
-      [e.target.name]: value,
+      [e.target.name]: e.target.value,
     })
   }
 
-  const onClickHandler = () => setFormState(intialState)
+  const onClickHandler = () => setFormState(initialState)
   const onSubmitHandler = (e) => {
     e.preventDefault()
     console.log(formState)
@@ -31,6 +30,7 @@ function Form() {
       <form className={styles.contactForm} onSubmit={onSubmitHandler}>
         <div className={styles.nameSection}>
           <TextField
+            required
             className={styles.formInput}
             id="firstName"
             name="firstName"
@@ -41,6 +41,7 @@ function Form() {
             onChange={onChangeHandler}
           />
           <TextField
+            required
             className={styles.formInput}
             id="lastName"
             name="lastName"
@@ -52,6 +53,7 @@ function Form() {
           />
         </div>
         <TextField
+          required
           className={styles.formInput}
           id="email"
           name="email"
@@ -63,6 +65,7 @@ function Form() {
           onChange={onChangeHandler}
         />
         <TextField
+          required
           className={styles.formTextArea}
           id="message"
           name="message"
