@@ -1,4 +1,4 @@
-import Box from "@material-ui/core"
+import { Box } from "@material-ui/core"
 import React from "react"
 import Banner from "../../components/banner/Banner"
 import Form from "../../components/contact-page/Form"
