@@ -1,0 +1,11 @@
+@import "./colors.scss";
+
+.pageTitle {
+  margin-left: 5rem;
+  margin-bottom: 2rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: $dark-color;
+  width: 25%;
+  border-bottom: 0.1rem $purple-color solid;
+}
