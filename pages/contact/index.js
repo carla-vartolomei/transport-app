@@ -8,6 +8,7 @@ import FacebookIcon from "@mui/icons-material/Facebook"
 import InstagramIcon from "@mui/icons-material/Instagram"
 import TwitterIcon from "@mui/icons-material/Twitter"
 import YouTubeIcon from "@mui/icons-material/YouTube"
+import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import { IconButton } from "@mui/material"
 
 export default function Contact() {
@@ -24,7 +25,7 @@ export default function Contact() {
       <div className={styles.backDiv}>
         <h1>get in touch</h1>
         <p>We are active on social media!</p>
-        <p>Go follow us on Facebook, Instagram, Twitter and Youtube!</p>
+        <p>Go follow us on Facebook, Instagram, Twitter, Youtube and LinkedIn!</p>
         <div className={styles.socialMediaIcons}>
           <IconButton>
             <a href="https://www.facebook.com/">
@@ -44,6 +45,11 @@ export default function Contact() {
           <IconButton>
             <a href="https://www.youtube.com/">
               <YouTubeIcon fontSize="large" />
+            </a>
+          </IconButton>
+          <IconButton>
+            <a href="https://www.linkedin.com/">
+              <LinkedInIcon fontSize="large" />
             </a>
           </IconButton>
         </div>
