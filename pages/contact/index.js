@@ -4,6 +4,7 @@ import Banner from "../../components/banner/Banner"
 import Form from "../../components/contact-page/form/Form"
 import InfoCard from "../../components/contact-page/info-card/InfoCard"
 import styles from "../../styles/Contact.module.scss"
+import "../../styles/pageStyles.module.scss"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import InstagramIcon from "@mui/icons-material/Instagram"
 import TwitterIcon from "@mui/icons-material/Twitter"
@@ -15,7 +16,7 @@ export default function Contact() {
   return (
     <div className={styles.contactRoot}>
       <Banner />
-      <h1 className={styles.pageTitle}>Contact us</h1>
+      <h1 className="pageTitle">Contact us</h1>
       <Form />
       <div className={styles.infoContainer}>
         <Box className={styles.infoBox}>

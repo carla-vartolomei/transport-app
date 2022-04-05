@@ -1,11 +1,13 @@
 import React from "react"
 import Banner from "../../components/banner/Banner"
+import styles from "../../styles/About.module.scss"
+import "../../styles/pageStyles.module.scss"
 
 export default function About() {
   return (
     <>
       <Banner />
-      <h1>About</h1>
+      <h1 className="pageTitle">About us</h1>
     </>
   )
 }
