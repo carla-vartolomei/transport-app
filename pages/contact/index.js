@@ -10,7 +10,6 @@ import YouTubeIcon from "@mui/icons-material/YouTube"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import { IconButton } from "@mui/material"
 import styles from "../../styles/Contact.module.scss"
-import "../../styles/pageStyles.module.scss"
 
 export default function Contact() {
   return (
