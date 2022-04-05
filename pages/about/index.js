@@ -18,8 +18,12 @@ export default function About() {
         recusandae.
       </p>
       <Paper className={styles.visionMissionSection} elevation={3}>
-        <h1>heelo</h1>
-        <h1>heelo</h1>
+        <div className={styles.visionSection}>
+          <h1>vision</h1>
+        </div>
+        <div className={styles.missionSection}>
+          <h1>mission</h1>
+        </div>
       </Paper>
     </>
   )

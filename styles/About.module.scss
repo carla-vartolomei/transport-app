@@ -7,14 +7,25 @@
 }
 
 .visionMissionSection {
+  width: 80%;
+  height: 100%;
   margin: 2rem 10rem;
+  padding: 1rem 3rem;
   background-color: $smoke-color;
   display: flex;
   flex-direction: row;
   gap: 5rem;
-  align-items: center;
-  justify-content: center;
-  h1 {
-    color: $purple-color;
+  .visionSection,
+  .missionSection {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    h1 {
+      color: $purple-color;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
   }
 }
