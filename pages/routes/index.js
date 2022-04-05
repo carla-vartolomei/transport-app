@@ -5,7 +5,7 @@ export default function index() {
   return (
     <>
       <Banner />
-      <h1>Routes</h1>
+      <h1 className="pageTitle">Routes</h1>
     </>
   )
 }
