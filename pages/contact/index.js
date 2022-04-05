@@ -3,14 +3,14 @@ import React from "react"
 import Banner from "../../components/banner/Banner"
 import Form from "../../components/contact-page/form/Form"
 import InfoCard from "../../components/contact-page/info-card/InfoCard"
-import styles from "../../styles/Contact.module.scss"
-import "../../styles/pageStyles.module.scss"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import InstagramIcon from "@mui/icons-material/Instagram"
 import TwitterIcon from "@mui/icons-material/Twitter"
 import YouTubeIcon from "@mui/icons-material/YouTube"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import { IconButton } from "@mui/material"
+import styles from "../../styles/Contact.module.scss"
+import "../../styles/pageStyles.module.scss"
 
 export default function Contact() {
   return (
