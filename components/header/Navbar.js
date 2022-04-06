@@ -1,9 +1,10 @@
+import React from "react"
 import { AppBar, Toolbar, Button, Typography, IconButton } from "@mui/material"
 import { Box } from "@mui/system"
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus"
 import Link from "next/link"
-import React from "react"
 import styles from "./Navbar.module.scss"
+import BusRoutesPopover from "./BusRoutesPopover"
 
 const pages = ["home", "about", "routes", "tickets", "discounts", "contact"]
 
@@ -23,13 +24,15 @@ export default function Navbar() {
             {pages.map((item, index) => {
               let path = ""
               item === "home" ? (path = "/") : (path = `/${item}`)
-              return (
-                <Button key={index.toString()} color="inherit">
-                  <Link href={path}>
-                    <a>{item}</a>
-                  </Link>
-                </Button>
-              )
+              if (item === "routes") return <BusRoutesPopover />
+              else
+                return (
+                  <Button key={index.toString()} color="inherit">
+                    <Link href={path}>
+                      <a>{item}</a>
+                    </Link>
+                  </Button>
+                )
             })}
           </Box>
         </Toolbar>
