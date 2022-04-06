@@ -4,7 +4,7 @@ import { Box } from "@mui/system"
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus"
 import Link from "next/link"
 import styles from "./Navbar.module.scss"
-import BusRoutesPopover from "./BusRoutesPopover"
+import BusRoutesMenu from "./BusRoutesMenu"
 
 const pages = ["home", "about", "routes", "tickets", "discounts", "contact"]
 
@@ -24,7 +24,7 @@ export default function Navbar() {
             {pages.map((item, index) => {
               let path = ""
               item === "home" ? (path = "/") : (path = `/${item}`)
-              if (item === "routes") return <BusRoutesPopover />
+              if (item === "routes") return <BusRoutesMenu name={item} path={path} />
               else
                 return (
                   <Button key={index.toString()} color="inherit">
