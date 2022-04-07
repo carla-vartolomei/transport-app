@@ -1,0 +1,48 @@
+export const data = {
+  SUCEAVA: {
+    pathMap:
+      "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d345191.909301708!2d26.634865554689547!3d47.47409694832783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x40cafb7cf639ddbb%3A0x7ccb80da5426f53c!2zSWHImWk!3m2!1d47.158454899999995!2d27.6014418!4m5!1s0x4734fc1fc6ebe593%3A0x1ec62d12b9588ddd!2sSuceava!3m2!1d47.6634521!2d26.2732302!5e0!3m2!1sro!2sro!4v1649249777449!5m2!1sro!2sro",
+    startPointStation: "Transbus Codreanu",
+    endPointStation: "Intertrans",
+    startPointContact: "0749.999.212 / 0232.235.850",
+    endPointContact: "0752.311.144 / 0230.522.446",
+    startPointTimeSchedule: [
+      "06:15",
+      "07:00",
+      "08:30",
+      "09:30",
+      "10:30",
+      "12:00",
+      "14:00",
+      "14:45",
+      "16:00",
+      "17:15",
+      "18:00",
+      "19:00",
+    ],
+    endPointTimeSchedule: [
+      "05:30",
+      "06:15",
+      "07:00",
+      "08:30",
+      "10:15",
+      "11:15",
+      "12:15",
+      "13:00",
+      "14:15",
+      "15:30",
+      "17:15",
+      "18:30",
+    ],
+  },
+  FALTICENI: {
+    pathMap:
+      "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d346015.8393759031!2d26.66750487484263!3d47.34854137191586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x40cafb7cf639ddbb%3A0x7ccb80da5426f53c!2zSWHImWk!3m2!1d47.158454899999995!2d27.6014418!4m5!1s0x4735109bcbd59147%3A0x5e98de9d88f35ac8!2sF%C4%83lticeni!3m2!1d47.4615626!2d26.3015288!5e0!3m2!1sro!2sro!4v1649314938242!5m2!1sro!2sro",
+    startPointStation: "Transbus Codreanu",
+    endPointStation: "Intertrans",
+    startPointContact: "0749.999.212 / 0232.235.850",
+    endPointContact: "0735.788.956",
+    startPointTimeSchedule: ["06:30", "09:15", "11:30", "16:30", "17:30"],
+    endPointTimeSchedule: ["06:45", "09:00", "11:40", "14:00", "18:50"],
+  },
+}
