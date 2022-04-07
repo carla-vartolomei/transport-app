@@ -17,9 +17,6 @@ function Id() {
   let endPoint
   id ? (endPoint = id.slice(5).toUpperCase()) : (endPoint = null)
 
-  endPoint === "TARGUFRUMOS" ? (endPoint = "TARGU FRUMOS") : null
-  endPoint === "TARGUNEAMT" ? (endPoint = "TARGU NEAMT") : null
-
   let routeInfo
   data ? (routeInfo = data[endPoint]) : (routeInfo = null)
 
@@ -55,6 +52,9 @@ function Id() {
   routeInfo
     ? (endPointTimeSchedule = routeInfo.endPointTimeSchedule)
     : (endPointTimeSchedule = [])
+
+  endPoint === "TARGUFRUMOS" ? (endPoint = "TARGU FRUMOS") : null
+  endPoint === "TARGUNEAMT" ? (endPoint = "TARGU NEAMT") : null
 
   return (
     <>
