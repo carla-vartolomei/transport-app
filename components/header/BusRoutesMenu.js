@@ -31,7 +31,21 @@ export default function BusRoutesMenu({ name, path }) {
       >
         {name}
       </Button>
-      <Menu id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
+      <Menu
+        className={styles.routesMenu}
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
         {endPoint.map((item, index) => {
           const path = `/routes/${startPoint.name.toLowerCase()}-${item.name
             .toLowerCase()
@@ -40,7 +54,11 @@ export default function BusRoutesMenu({ name, path }) {
 
           if (index === endPoint.length - 1)
             return (
-              <MenuItem key={index.toString()} onMouseLeave={handleClose}>
+              <MenuItem
+                key={index.toString()}
+                onMouseLeave={handleClose}
+                className={styles.routesMenuItem}
+              >
                 <Link href={path}>
                   <a>
                     {startPoint.name} - {item.name}
@@ -50,7 +68,7 @@ export default function BusRoutesMenu({ name, path }) {
             )
           else
             return (
-              <MenuItem key={index.toString()}>
+              <MenuItem key={index.toString()} className={styles.routesMenuItem}>
                 <Link href={path}>
                   <a>
                     {startPoint.name} - {item.name}

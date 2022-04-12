@@ -13,9 +13,12 @@
   }
 }
 
-#basic-menu {
-  width: 100%;
+.routesMenu {
+  width: 70%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  .routesMenuItem {
+    padding: 0.5rem;
+  }
 }
