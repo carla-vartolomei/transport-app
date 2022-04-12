@@ -5,7 +5,6 @@ import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
 import styles from "./Navbar.module.scss"
 import data from "../../scripts/busRoutes"
-import { compose } from "@mui/system"
 
 export default function BusRoutesMenu({ name, path }) {
   const startPoint = data.startPoint
@@ -32,13 +31,7 @@ export default function BusRoutesMenu({ name, path }) {
       >
         {name}
       </Button>
-      <Menu
-        className={styles.routesMenu}
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-      >
+      <Menu id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
         {endPoint.map((item, index) => {
           const path = `/routes/${startPoint.name.toLowerCase()}-${item.name
             .toLowerCase()
