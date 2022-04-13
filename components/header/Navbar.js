@@ -24,7 +24,10 @@ export default function Navbar() {
             {pages.map((item, index) => {
               let path = ""
               item === "home" ? (path = "/") : (path = `/${item}`)
-              if (item === "routes") return <BusRoutesMenu name={item} path={path} />
+              if (item === "routes")
+                return (
+                  <BusRoutesMenu key={index.toString()} name={item} path={path} />
+                )
               else
                 return (
                   <Button key={index.toString()} color="inherit">

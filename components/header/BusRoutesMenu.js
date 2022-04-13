@@ -2,7 +2,6 @@ import React from "react"
 import { Button } from "@mui/material"
 import Link from "next/link"
 import Menu from "@mui/material/Menu"
-import MenuItem from "@mui/material/MenuItem"
 import styles from "./Navbar.module.scss"
 import data from "../../scripts/busRoutes"
 
@@ -36,15 +35,7 @@ export default function BusRoutesMenu({ name, path }) {
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "left",
-        }}
+        onMouseLeave={handleClose}
       >
         {endPoint.map((item, index) => {
           const path = `/routes/${startPoint.name.toLowerCase()}-${item.name
@@ -54,7 +45,7 @@ export default function BusRoutesMenu({ name, path }) {
 
           if (index === endPoint.length - 1)
             return (
-              <MenuItem
+              <li
                 key={index.toString()}
                 onMouseLeave={handleClose}
                 className={styles.routesMenuItem}
@@ -64,17 +55,17 @@ export default function BusRoutesMenu({ name, path }) {
                     {startPoint.name} - {item.name}
                   </a>
                 </Link>
-              </MenuItem>
+              </li>
             )
           else
             return (
-              <MenuItem key={index.toString()} className={styles.routesMenuItem}>
+              <li key={index.toString()} className={styles.routesMenuItem}>
                 <Link href={path}>
                   <a>
                     {startPoint.name} - {item.name}
                   </a>
                 </Link>
-              </MenuItem>
+              </li>
             )
         })}
       </Menu>

@@ -13,12 +13,23 @@
   }
 }
 
-.routesMenu {
-  width: 70%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 0.5fr;
-  .routesMenuItem {
-    padding: 0.5rem;
+.routesMenu ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.routesMenuItem {
+  a {
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+  }
+  font-weight: 500;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: $purple-color;
+    opacity: 0.9;
   }
 }

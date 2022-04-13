@@ -2,6 +2,7 @@ import React from "react"
 import banner from "../assets/banner.png"
 import Image from "next/image"
 import Link from "next/link"
+import axios from "axios"
 import { Container } from "@mui/material"
 import styles from "../styles/Home.module.scss"
 import PageDetail from "../components/homepage/pageDetail/PageDetail"
@@ -10,7 +11,7 @@ import SearchBox from "../components/homepage/searchBox/SearchBox"
 
 const pagesName = ["about", "routes", "discounts", "contact"]
 
-export default function Home() {
+export default function Home({ discounts }) {
   return (
     <>
       <Container fixed className={styles.containerImage}>
@@ -24,10 +25,21 @@ export default function Home() {
       <div>
         {pagesName.map((pageName, index) => (
           <PageDetail key={`${index}-${pageName}`} pageName={pageName}>
-            <HomePageSection pageName={pageName} />
+            <HomePageSection pageName={pageName} discounts={discounts} />
           </PageDetail>
         ))}
       </div>
     </>
   )
+}
+
+export const getStaticProps = async () => {
+  const { data } = await axios.get(`http://localhost:3000/api/discounts`)
+  const discounts = await data
+
+  return {
+    props: {
+      discounts,
+    },
+  }
 }
