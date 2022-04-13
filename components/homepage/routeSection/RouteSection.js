@@ -2,11 +2,10 @@ import React from "react"
 import { Box } from "@mui/system"
 import { CardRoute } from "./CardRoute"
 import styles from "./RouteSection.module.scss"
-import data from "../../../scripts/busRoutes"
 
-function RouteSection() {
-  const startPoint = data.startPoint
-  const endPoint = data.endPoint
+function RouteSection({ busRoutes }) {
+  const startPoint = busRoutes.startPoint
+  const endPoint = busRoutes.endPoint
   return (
     <>
       <div className={styles.scrollBar}>

@@ -3,12 +3,8 @@ import { Button } from "@mui/material"
 import Link from "next/link"
 import Menu from "@mui/material/Menu"
 import styles from "./Navbar.module.scss"
-import data from "../../scripts/busRoutes"
 
-export default function BusRoutesMenu({ name, path }) {
-  const startPoint = data.startPoint
-  const endPoint = data.endPoint
-
+export default function BusRoutesMenu({ name, startPoint, endPoint }) {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
   const handleMouseOver = (event) => {

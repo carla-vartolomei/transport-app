@@ -8,7 +8,9 @@ import BusRoutesMenu from "./BusRoutesMenu"
 
 const pages = ["home", "about", "routes", "tickets", "discounts", "contact"]
 
-export default function Navbar() {
+export default function Navbar({ busRoutes }) {
+  const startPoint = busRoutes.startPoint
+  const endPoint = busRoutes.endPoint
   return (
     <>
       <AppBar layout="responsive" position="fixed" className={styles.navbarRoot}>
@@ -26,7 +28,13 @@ export default function Navbar() {
               item === "home" ? (path = "/") : (path = `/${item}`)
               if (item === "routes")
                 return (
-                  <BusRoutesMenu key={index.toString()} name={item} path={path} />
+                  <BusRoutesMenu
+                    key={index.toString()}
+                    name={item}
+                    path={path}
+                    startPoint={startPoint}
+                    endPoint={endPoint}
+                  />
                 )
               else
                 return (
