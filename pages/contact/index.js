@@ -1,5 +1,6 @@
 import { Box } from "@material-ui/core"
 import React from "react"
+import axios from "axios"
 import Banner from "../../components/banner/Banner"
 import Form from "../../components/contact-page/form/Form"
 import InfoCard from "../../components/contact-page/info-card/InfoCard"
@@ -11,7 +12,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import { IconButton } from "@mui/material"
 import styles from "../../styles/Contact.module.scss"
 
-export default function Contact() {
+function Contact({ contactData }) {
+  const contactDescription = contactData.contactDescription
+  const contactInfo = contactData.contactInfo
   return (
     <div className={styles.contactRoot}>
       <Banner />
@@ -19,7 +22,10 @@ export default function Contact() {
       <Form />
       <div className={styles.infoContainer}>
         <Box className={styles.infoBox}>
-          <InfoCard />
+          <InfoCard
+            contactDescription={contactDescription}
+            contactInfo={contactInfo}
+          />
         </Box>
       </div>
       <div className={styles.backDiv}>
@@ -27,7 +33,7 @@ export default function Contact() {
         <p>We are active on social media!</p>
         <p>Go follow us on Facebook, Instagram, Twitter, Youtube and LinkedIn!</p>
         <div className={styles.socialMediaIcons}>
-          {data.map((item, index) => (
+          {socialMediaData.map((item, index) => (
             <IconButton key={index.toString()}>
               <a href={item.link}>{item.icon}</a>
             </IconButton>
@@ -38,7 +44,7 @@ export default function Contact() {
   )
 }
 
-const data = [
+const socialMediaData = [
   {
     link: "https://www.facebook.com/",
     icon: <FacebookIcon fontSize="large" />,
@@ -60,3 +66,15 @@ const data = [
     icon: <LinkedInIcon fontSize="large" />,
   },
 ]
+
+export const getStaticProps = async () => {
+  const { data: contactData } = await axios.get(`http://localhost:3000/api/contact`)
+
+  return {
+    props: {
+      contactData,
+    },
+  }
+}
+
+export default Contact

@@ -19,7 +19,6 @@ function Form() {
     })
   }
 
-  const onClickHandler = () => setFormState(initialState)
   const onSubmitHandler = (e) => {
     e.preventDefault()
     console.log(formState)

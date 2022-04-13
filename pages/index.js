@@ -12,7 +12,6 @@ import SearchBox from "../components/homepage/searchBox/SearchBox"
 const pagesName = ["about", "routes", "discounts", "contact"]
 
 export default function Home({ discounts, busRoutes, contactData }) {
-  console.log(contactData)
   return (
     <>
       <Container fixed className={styles.containerImage}>
