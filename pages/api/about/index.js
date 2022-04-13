@@ -1,4 +1,4 @@
-const data = [
+const iconSectionList = [
   {
     title: 240,
     subtitle: "destinations",
@@ -21,4 +21,6 @@ const data = [
   },
 ]
 
-module.exports = data
+export default async (req, res) => {
+  res.status(200).json(iconSectionList)
+}

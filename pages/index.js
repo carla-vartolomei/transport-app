@@ -11,7 +11,7 @@ import SearchBox from "../components/homepage/searchBox/SearchBox"
 
 const pagesName = ["about", "routes", "discounts", "contact"]
 
-export default function Home({ discounts, busRoutes, contactData }) {
+export default function Home({ discounts, busRoutes, contactData, aboutData }) {
   return (
     <>
       <Container fixed className={styles.containerImage}>
@@ -30,6 +30,7 @@ export default function Home({ discounts, busRoutes, contactData }) {
               discounts={discounts}
               busRoutes={busRoutes}
               contactData={contactData}
+              aboutData={aboutData}
             />
           </PageDetail>
         ))}
@@ -42,12 +43,14 @@ export const getStaticProps = async () => {
   const { data: discounts } = await axios.get(`http://localhost:3000/api/discounts`)
   const { data: busRoutes } = await axios.get(`http://localhost:3000/api/bus-routes`)
   const { data: contactData } = await axios.get(`http://localhost:3000/api/contact`)
+  const { data: aboutData } = await axios.get(`http://localhost:3000/api/about`)
 
   return {
     props: {
       discounts,
       busRoutes,
       contactData,
+      aboutData,
     },
   }
 }

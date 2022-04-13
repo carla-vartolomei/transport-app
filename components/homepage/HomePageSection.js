@@ -4,10 +4,16 @@ import ContactSection from "./contactSection/ContactSection"
 import DiscountSection from "./discountSection/DiscountSection"
 import RouteSection from "./routeSection/RouteSection"
 
-const HomePageSection = ({ pageName, discounts, busRoutes, contactData }) => {
+const HomePageSection = ({
+  pageName,
+  discounts,
+  busRoutes,
+  contactData,
+  aboutData,
+}) => {
   switch (pageName) {
     case "about":
-      return <AboutSection />
+      return <AboutSection aboutData={aboutData} />
     case "routes":
       return <RouteSection busRoutes={busRoutes} />
     case "discounts":
