@@ -35,7 +35,7 @@ export default function Home({ discounts }) {
 
 export const getStaticProps = async () => {
   const { data } = await axios.get(`http://localhost:3000/api/discounts`)
-  const discounts = await data
+  const discounts = data
 
   return {
     props: {
