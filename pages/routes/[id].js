@@ -84,10 +84,10 @@ function Id() {
               <span>&quot;{startPointStation}&quot; Bus Station</span>
             </p>
             <div className={styles.departureTime}>
-              <p className={styles.departureTimeTitle}>
+              <div className={styles.departureTimeTitle}>
                 <AccessTimeOutlinedIcon />
                 <h3>departure time schedule</h3>
-              </p>
+              </div>
               <div className={styles.departureTimeListSection}>
                 <ul className={styles.departureTimeList}>
                   {startPointTimeSchedule.map((item, index) => (
@@ -109,10 +109,10 @@ function Id() {
               <span>&quot;{endPointStation}&quot; Bus Station</span>
             </p>
             <div className={styles.departureTime}>
-              <p className={styles.departureTimeTitle}>
+              <div className={styles.departureTimeTitle}>
                 <AccessTimeOutlinedIcon />
                 <h3>departure time schedule</h3>
-              </p>
+              </div>
               <div className={styles.departureTimeListSection}>
                 <ul className={styles.departureTimeList}>
                   {endPointTimeSchedule.map((item, index) => (
