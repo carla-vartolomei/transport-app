@@ -1,5 +1,7 @@
-export const data = {
-  SUCEAVA: {
+const busRoutesSchedule = [
+  {
+    id: "iasi-suceava",
+    endPoint: "SUCEAVA",
     pathMap:
       "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d345191.909301708!2d26.634865554689547!3d47.47409694832783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x40cafb7cf639ddbb%3A0x7ccb80da5426f53c!2zSWHImWk!3m2!1d47.158454899999995!2d27.6014418!4m5!1s0x4734fc1fc6ebe593%3A0x1ec62d12b9588ddd!2sSuceava!3m2!1d47.6634521!2d26.2732302!5e0!3m2!1sro!2sro!4v1649249777449!5m2!1sro!2sro",
     startPointStation: "Transbus Codreanu",
@@ -35,7 +37,9 @@ export const data = {
       "18:30",
     ],
   },
-  FALTICENI: {
+  {
+    id: "iasi-falticeni",
+    endPoint: "FALTICENI",
     pathMap:
       "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d346015.8393759031!2d26.66750487484263!3d47.34854137191586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x40cafb7cf639ddbb%3A0x7ccb80da5426f53c!2zSWHImWk!3m2!1d47.158454899999995!2d27.6014418!4m5!1s0x4735109bcbd59147%3A0x5e98de9d88f35ac8!2sF%C4%83lticeni!3m2!1d47.4615626!2d26.3015288!5e0!3m2!1sro!2sro!4v1649314938242!5m2!1sro!2sro",
     startPointStation: "Transbus Codreanu",
@@ -45,7 +49,9 @@ export const data = {
     startPointTimeSchedule: ["06:30", "09:15", "11:30", "16:30", "17:30"],
     endPointTimeSchedule: ["06:45", "09:00", "11:40", "14:00", "18:50"],
   },
-  HUSI: {
+  {
+    id: "iasi-husi",
+    endPoint: "HUSI",
     pathMap:
       "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d348856.1937047996!2d27.58796709944993!3d46.91375013484565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x40cafb7cf639ddbb%3A0x7ccb80da5426f53c!2zSWHImWk!3m2!1d47.158454899999995!2d27.6014418!4m5!1s0x40ca10eccd50e139%3A0x7f6eba1a48fcb548!2zSHXImWk!3m2!1d46.675864399999995!2d28.058989999999998!5e0!3m2!1sro!2sro!4v1649325283812!5m2!1sro!2sro",
     startPointStation: "Transbus Codreanu",
@@ -55,7 +61,9 @@ export const data = {
     startPointTimeSchedule: ["06:15", "08:00", "10:45", "15:30", "17:25"],
     endPointTimeSchedule: ["08:30", "12:00", "15:30", "17:45", "19:30"],
   },
-  TARGUNEAMT: {
+  {
+    id: "iasi-targuneamt",
+    endPoint: "TARGU NEAMT",
     pathMap:
       "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d694738.3109754773!2d26.98859785000001!3d47.1417625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x40cafb7cf639ddbb%3A0x7ccb80da5426f53c!2zSWHImWk!3m2!1d47.158454899999995!2d27.6014418!4m5!1s0x4735473db2ee6ba5%3A0xbae59b8655847551!2zVMOicmd1IE5lYW3Imw!3m2!1d47.2097877!2d26.375730599999997!5e0!3m2!1sro!2sro!4v1649325575721!5m2!1sro!2sro",
     startPointStation: "Transbus Codreanu",
@@ -91,7 +99,9 @@ export const data = {
       "17:15",
     ],
   },
-  PASCANI: {
+  {
+    id: "iasi-pascani",
+    endPoint: "PASCANI",
     pathMap:
       "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d346962.88719574595!2d26.882209483042736!3d47.20391048442614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x40cafb7cf639ddbb%3A0x7ccb80da5426f53c!2zSWHImWk!3m2!1d47.158454899999995!2d27.6014418!4m5!1s0x473533a7a4bb9fd1%3A0xa6560f0fc089c3c3!2zUGHImWNhbmk!3m2!1d47.241123699999996!2d26.723383199999997!5e0!3m2!1sro!2sro!4v1649325849986!5m2!1sro!2sro",
     startPointStation: "Transbus Codreanu",
@@ -187,7 +197,9 @@ export const data = {
       "19:40",
     ],
   },
-  TARGUFRUMOS: {
+  {
+    id: "iasi-targufrumos",
+    endPoint: "TARGU FRUMOS",
     pathMap:
       "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d173520.78780303887!2d27.16480071705589!3d47.19187817756575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x40cafb7cf639ddbb%3A0x7ccb80da5426f53c!2zSWHImWk!3m2!1d47.158454899999995!2d27.6014418!4m5!1s0x40cacf8d23bfe81d%3A0x781dc66432f3c27!2sT%C3%A2rgu%20Frumos!3m2!1d47.208539699999996!2d27.0083561!5e0!3m2!1sro!2sro!4v1649331086349!5m2!1sro!2sro",
     startPointStation: "Transbus Codreanu",
@@ -259,7 +271,9 @@ export const data = {
       "20:30",
     ],
   },
-  REDIU: {
+  {
+    id: "iasi-rediu",
+    endPoint: "REDIU",
     pathMap:
       "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d86727.31493722451!2d27.445477810990784!3d47.21210935921051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x40cafb7cf639ddbb%3A0x7ccb80da5426f53c!2zSWHImWk!3m2!1d47.158454899999995!2d27.6014418!4m5!1s0x40cae3dc00f61009%3A0xd3df38c13ef4d7a0!2zUmVkaXUsIElhxZ9p!3m2!1d47.240684099999996!2d27.447139!5e0!3m2!1sro!2sro!4v1649741713966!5m2!1sro!2sro",
     startPointStation: "Transbus Codreanu",
@@ -355,4 +369,8 @@ export const data = {
       "19:40",
     ],
   },
+]
+
+export default async (req, res) => {
+  res.status(200).json(busRoutesSchedule)
 }

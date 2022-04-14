@@ -1,57 +1,27 @@
+import React from "react"
+import axios from "axios"
 import { Button, Container } from "@material-ui/core"
 import { useRouter } from "next/router"
-import React from "react"
 import Banner from "../../components/banner/Banner"
 import styles from "../../styles/Routes.module.scss"
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined"
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined"
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined"
-import { data } from "../../scripts/busRoutesSchedule"
 
-function Id() {
+function Id({ busRouteSchedule }) {
   const router = useRouter()
   const { id } = router.query
 
-  let startPoint
-  id ? (startPoint = id.slice(0, 4).toUpperCase()) : (startPoint = null)
-  let endPoint
-  id ? (endPoint = id.slice(5).toUpperCase()) : (endPoint = null)
+  const path = busRouteSchedule.pathMap
+  const startPointStation = busRouteSchedule.startPointStation
+  const endPointStation = busRouteSchedule.endPointStation
+  const startPointContact = busRouteSchedule.startPointContact
+  const endPointContact = busRouteSchedule.endPointContact
+  const startPointTimeSchedule = busRouteSchedule.startPointTimeSchedule
+  const endPointTimeSchedule = busRouteSchedule.endPointTimeSchedule
 
-  let routeInfo
-  data ? (routeInfo = data[endPoint]) : (routeInfo = null)
-
-  let path
-  routeInfo ? (path = routeInfo.pathMap) : (path = null)
-
-  let startPointStation
-  routeInfo
-    ? (startPointStation = routeInfo.startPointStation)
-    : (startPointStation = null)
-
-  let endPointStation
-  routeInfo
-    ? (endPointStation = routeInfo.endPointStation)
-    : (endPointStation = null)
-
-  let startPointContact
-  routeInfo
-    ? (startPointContact = routeInfo.startPointContact)
-    : (startPointContact = null)
-
-  let endPointContact
-  routeInfo
-    ? (endPointContact = routeInfo.endPointContact)
-    : (endPointContact = null)
-
-  let startPointTimeSchedule
-  routeInfo
-    ? (startPointTimeSchedule = routeInfo.startPointTimeSchedule)
-    : (startPointTimeSchedule = [])
-
-  let endPointTimeSchedule
-  routeInfo
-    ? (endPointTimeSchedule = routeInfo.endPointTimeSchedule)
-    : (endPointTimeSchedule = [])
+  const startPoint = id.slice(0, 4).toUpperCase()
+  let endPoint = id.slice(5).toUpperCase()
 
   endPoint === "TARGUFRUMOS" ? (endPoint = "TARGU FRUMOS") : null
   endPoint === "TARGUNEAMT" ? (endPoint = "TARGU NEAMT") : null
@@ -131,6 +101,31 @@ function Id() {
       </section>
     </>
   )
+}
+
+export const getStaticPaths = async () => {
+  const { data: busRoutesSchedule } = await axios.get(
+    `http://localhost:3000/api/bus-routes-schedule`
+  )
+
+  const paths = busRoutesSchedule.map((route) => ({
+    params: { id: route.id },
+  }))
+
+  return {
+    paths,
+    fallback: "blocking",
+  }
+}
+
+export const getStaticProps = async ({ params }) => {
+  const { data: busRouteSchedule } = await axios.get(
+    `http://localhost:3000/api/bus-routes-schedule/${params.id}`
+  )
+
+  return {
+    props: { busRouteSchedule },
+  }
 }
 
 export default Id

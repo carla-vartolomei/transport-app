@@ -1,5 +1,6 @@
 import React from "react"
 import Banner from "../../components/banner/Banner"
+import axios from "axios"
 
 export default function index() {
   return (
