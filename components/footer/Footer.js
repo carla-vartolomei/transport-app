@@ -56,22 +56,22 @@ function Footer() {
             <h5 className={styles.footerLinksTitle}>Frequently Asked Questions</h5>
             <ul className={styles.footerLinksList}>
               <li className={styles.footerLinksListItem}>
-                <Link href="/">
+                <Link href="/faq">
                   <a>How can I book a ticket?</a>
                 </Link>
               </li>
               <li className={styles.footerLinksListItem}>
-                <Link href="/">
+                <Link href="/faq">
                   <a>Where I can check my tickets?</a>
                 </Link>
               </li>
               <li className={styles.footerLinksListItem}>
-                <Link href="/">
+                <Link href="/faq">
                   <a>How can I cancel a ticket?</a>
                 </Link>
               </li>
               <li className={styles.footerLinksListItem}>
-                <Link href="/">
+                <Link href="/faq">
                   <a>Do I have a discount as a student?</a>
                 </Link>
               </li>

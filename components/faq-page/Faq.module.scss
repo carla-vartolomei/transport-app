@@ -1,0 +1,53 @@
+@import "../../styles/colors.scss";
+
+.faqSection {
+  margin: 2rem 5rem;
+  .accordionSummary {
+    background-color: $smoke-color;
+    border-left: 0.25rem solid $purple-color;
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      h1 {
+        margin: 0.5rem;
+        font-size: 2rem;
+        color: $purple-color;
+      }
+      h4 {
+        margin: 0;
+        font-size: 1.25rem;
+        color: $dark-color;
+      }
+    }
+  }
+  .accordionDetails {
+    border-left: 0.25rem solid rgb(157, 153, 153);
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      h1 {
+        margin: 0.5rem;
+        font-size: 2rem;
+        color: gray;
+      }
+      p {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: gray;
+        a {
+          color: $purple-color;
+          font-size: 0.8rem;
+          opacity: 0.8;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
