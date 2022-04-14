@@ -55,7 +55,11 @@ export default function BusRoutesMenu({ name, startPoint, endPoint }) {
             )
           else
             return (
-              <li key={index.toString()} className={styles.routesMenuItem}>
+              <li
+                key={index.toString()}
+                className={styles.routesMenuItem}
+                onClick={handleClose}
+              >
                 <Link href={path}>
                   <a>
                     {startPoint.name} - {item.name}
