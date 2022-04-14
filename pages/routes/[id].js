@@ -34,7 +34,7 @@ function Id({ busRouteSchedule }) {
       </h1>
       <p className="pageDescription">
         Our company offers you a fast and safe route to the desired destination. At a
-        minimum and attractive price, we offer you transport services with high
+        minimum and attractive price, we offer you transport services with high level
         comfort. <strong>Book your tickets now!</strong>
       </p>
       <Container className={styles.routeMapSection}>

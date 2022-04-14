@@ -1,6 +1,8 @@
 import React from "react"
 import Banner from "../../components/banner/Banner"
-import axios from "axios"
+import RoutesTable from "../../components/routes-page/RoutesTable"
+import { Container } from "@mui/material"
+import styles from "../../styles/Routes.module.scss"
 
 export default function index() {
   return (
@@ -8,14 +10,13 @@ export default function index() {
       <Banner />
       <h1 className="pageTitle">Routes</h1>
       <p className="pageDescription">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro tempora,
-        dolor quae veniam quasi non odio eum dignissimos provident nemo. Nam
-        similique adipisci eius, dignissimos doloremque pariatur sed tenetur
-        voluptates! Lorem, ipsum dolor sit amet consectetur adipisicing elit. At
-        consequuntur accusamus ea labore asperiores facere excepturi tempora nihil
-        impedit vero ullam dolor, commodi nulla nesciunt cupiditate. Cupiditate
-        veniam blanditiis quia.
+        Our company offers you a fast and safe route to the desired destination. At a
+        minimum and attractive price, we offer you transport services with high level
+        comfort. <strong>Book your tickets now!</strong>
       </p>
+      <Container className={styles.routesTableContainer}>
+        <RoutesTable />
+      </Container>
     </>
   )
 }
