@@ -1,9 +1,8 @@
 import react, { useState } from "react"
 import Button from "@mui/material/Button"
-import { styled } from "@mui/material/styles"
 import Modal from "@mui/material/Modal"
 import styles from "./BookTicket.module.scss"
-import { TextField } from "@mui/material"
+import CssTextField from "../../textfield/CustomeTextField"
 
 export default function BookTickets({ startPoint, endPoint }) {
   const initialState = {
@@ -147,23 +146,3 @@ export default function BookTickets({ startPoint, endPoint }) {
     </div>
   )
 }
-
-const CssTextField = styled(TextField)({
-  "& label.Mui-focused": {
-    color: "#6f22b3",
-  },
-  "& .MuiInput-underline:after": {
-    borderBottomColor: "#6f22b3",
-  },
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "#6f22b3",
-    },
-    "&:hover fieldset": {
-      borderColor: "#6f22b3",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "#6f22b3",
-    },
-  },
-})
