@@ -14,22 +14,6 @@
   }
 }
 
-.bookRouteSection {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  .bookRoute {
-    align-self: center;
-    width: 25%;
-    color: $purple-color;
-    border-color: $purple-color;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-}
-
 .routeScheduleSectionRoot {
   display: flex;
   justify-content: center;

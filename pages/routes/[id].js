@@ -7,6 +7,7 @@ import styles from "../../styles/Routes.module.scss"
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined"
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined"
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined"
+import BookTicket from "../../components/routes-page/book-ticket/BookTicket"
 
 function Id({ busRouteSchedule }) {
   const router = useRouter()
@@ -40,11 +41,9 @@ function Id({ busRouteSchedule }) {
       <Container className={styles.routeMapSection}>
         <iframe className={styles.routeMap} src={path} />
       </Container>
-      <div className={styles.bookRouteSection}>
-        <Button variant="outlined" className={styles.bookRoute}>
-          book now
-        </Button>
-      </div>
+
+      <BookTicket startPoint={startPoint} endPoint={endPoint} />
+
       <section className={styles.routeScheduleSectionRoot}>
         <div className={styles.routeScheduleSection}>
           <section className={styles.startPointSection}>
