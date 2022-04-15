@@ -29,11 +29,6 @@ function Footer() {
                   <a>Privacy policy</a>
                 </Link>
               </li>
-              <li className={styles.footerLinksListItem}>
-                <Link href="/">
-                  <a>Cookies settings</a>
-                </Link>
-              </li>
             </ul>
           </div>
           <div>

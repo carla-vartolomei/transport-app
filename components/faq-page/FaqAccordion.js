@@ -19,7 +19,7 @@ export default function ControlledAccordions() {
     ),
     createData(
       "Where I can check my tickets?",
-      "Your tickets are store in our database and you can see the checklist on the tickets page. ",
+      "Your tickets are store in our database and you can  check it on the tickets page. ",
       "/tickets"
     ),
     createData(
