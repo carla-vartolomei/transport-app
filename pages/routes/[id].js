@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 import Banner from "../../components/banner/Banner"
 import styles from "../../styles/Routes.module.scss"
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined"
+import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined"
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined"
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined"
 import BookTicket from "../../components/routes-page/book-ticket/BookTicket"
@@ -14,6 +15,7 @@ function Id({ busRouteSchedule }) {
   const { id } = router.query
 
   const path = busRouteSchedule.pathMap
+  const price = busRouteSchedule.price
   const startPointStation = busRouteSchedule.startPointStation
   const endPointStation = busRouteSchedule.endPointStation
   const startPointContact = busRouteSchedule.startPointContact
@@ -60,6 +62,14 @@ function Id({ busRouteSchedule }) {
               <LocationOnOutlinedIcon />
               <span>&quot;{startPointStation}&quot; Bus Station</span>
             </p>
+            <section className={styles.busStation}>
+              <PaidOutlinedIcon fontSize="medium" />
+              <div className={styles.routePrice}>
+                <span>{price}</span>
+                <sup>00</sup>
+              </div>
+              <span>lei</span>
+            </section>
             <div className={styles.departureTime}>
               <div className={styles.departureTimeTitle}>
                 <AccessTimeOutlinedIcon />
@@ -85,6 +95,14 @@ function Id({ busRouteSchedule }) {
               <LocationOnOutlinedIcon />
               <span>&quot;{endPointStation}&quot; Bus Station</span>
             </p>
+            <section className={styles.busStation}>
+              <PaidOutlinedIcon fontSize="medium" />
+              <div className={styles.routePrice}>
+                <span>{price}</span>
+                <sup>00</sup>
+              </div>
+              <span>lei</span>
+            </section>
             <div className={styles.departureTime}>
               <div className={styles.departureTimeTitle}>
                 <AccessTimeOutlinedIcon />

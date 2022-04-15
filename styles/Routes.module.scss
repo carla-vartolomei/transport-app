@@ -44,11 +44,26 @@
     }
     .busStation {
       display: flex;
+      align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      margin-bottom: 1rem;
       span {
         font-weight: 500;
         text-transform: uppercase;
+      }
+    }
+    .routePrice {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      span {
+        color: $purple-color;
+        font-weight: bold;
+        font-size: 1.15rem;
+      }
+      sup {
+        font-size: 0.65rem;
       }
     }
     .departureTime {

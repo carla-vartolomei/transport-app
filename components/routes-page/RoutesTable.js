@@ -9,18 +9,18 @@ import Paper from "@mui/material/Paper"
 import styles from "../../styles/Routes.module.scss"
 import Link from "next/link"
 
-function createData(name, time, stations, races) {
-  return { name, time, stations, races }
+function createData(name, price, time, stations, races) {
+  return { name, price, time, stations, races }
 }
 
 const rows = [
-  createData("Iasi-Suceava", "2h 33min", 51, 12),
-  createData("Iasi-Falticeni", "2h 40min", 43, 5),
-  createData("Iasi-Husi", "1h 23min", 33, 5),
-  createData("Iasi-Targu Neamt", "1h 57min", 38, 12),
-  createData("Iasi-Pascani", "1h 25min", 27, 42),
-  createData("Iasi-Targu Frumos", "1h 3min", 23, 30),
-  createData("Iasi-Rediu ", "26min", 12, 42),
+  createData("Iasi-Suceava", 38, "3h 03min", 51, 12),
+  createData("Iasi-Falticeni", 33, "2h 40min", 43, 5),
+  createData("Iasi-Husi", 28, "1h 31min", 33, 5),
+  createData("Iasi-Targu Neamt", 24, "2h 19min", 38, 12),
+  createData("Iasi-Pascani", 18, "1h 40min", 27, 42),
+  createData("Iasi-Targu Frumos", 10, "1h 19min", 23, 30),
+  createData("Iasi-Rediu ", 4, "26min", 12, 42),
 ]
 
 export default function RoutesTable() {
@@ -30,6 +30,7 @@ export default function RoutesTable() {
         <TableHead>
           <TableRow>
             <TableCell className={styles.routesTableHead}>Bus routes</TableCell>
+            <TableCell className={styles.routesTableHead}>Price</TableCell>
             <TableCell className={styles.routesTableHead}>Travel time </TableCell>
             <TableCell className={styles.routesTableHead}>
               Number of stations
@@ -54,6 +55,10 @@ export default function RoutesTable() {
                 <Link href={`/routes/${row.name.toLowerCase()}`}>
                   <a>{row.name}</a>
                 </Link>
+              </TableCell>
+              <TableCell className={styles.routesTableBodyCell}>
+                <strong> {row.price}</strong>
+                <span> lei</span>
               </TableCell>
               <TableCell className={styles.routesTableBodyCell}>
                 {row.time}
