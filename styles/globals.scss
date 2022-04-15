@@ -41,3 +41,17 @@ a {
   text-indent: 1.5rem;
   text-align: justify;
 }
+
+.not-found {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 12.98rem 0;
+  height: 100%;
+  width: 100%;
+  a {
+    color: $purple-color;
+    font-weight: bold;
+  }
+}

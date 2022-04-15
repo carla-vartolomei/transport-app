@@ -1,6 +1,6 @@
 import React from "react"
 import axios from "axios"
-import { Button, Container } from "@material-ui/core"
+import { Container } from "@material-ui/core"
 import { useRouter } from "next/router"
 import Banner from "../../components/banner/Banner"
 import styles from "../../styles/Routes.module.scss"
@@ -18,8 +18,16 @@ function Id({ busRouteSchedule }) {
   const endPointStation = busRouteSchedule.endPointStation
   const startPointContact = busRouteSchedule.startPointContact
   const endPointContact = busRouteSchedule.endPointContact
-  const startPointTimeSchedule = busRouteSchedule.startPointTimeSchedule
-  const endPointTimeSchedule = busRouteSchedule.endPointTimeSchedule
+
+  let startPointTimeSchedule = []
+  busRouteSchedule
+    ? (startPointTimeSchedule = busRouteSchedule.startPointTimeSchedule)
+    : null
+
+  let endPointTimeSchedule = []
+  busRouteSchedule
+    ? (endPointTimeSchedule = busRouteSchedule.endPointTimeSchedule)
+    : null
 
   const startPoint = id.slice(0, 4).toUpperCase()
   let endPoint = id.slice(5).toUpperCase()
@@ -113,7 +121,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: "blocking",
+    fallback: false,
   }
 }
 
