@@ -1,55 +1,71 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "./SearchBox.module.scss"
 import { Box } from "@mui/system"
-import { Button, TextField } from "@mui/material"
-import { LocalizationProvider, MobileDatePicker, MobileTimePicker } from "@mui/lab"
-import AdapterDateFns from "@mui/lab/AdapterDateFns"
+import { Button } from "@mui/material"
 import CssTextField from "../../textfield/CustomeTextField"
 
+const initialState = {
+  departureLocation: "",
+  arrivalLocation: "",
+  departureDate: "",
+  departureTime: "",
+}
+
 export default function SearchBox() {
-  const [value, setValue] = React.useState(new Date())
+  const [formState, setFormState] = useState(initialState)
+
+  const onChangeHandler = (e) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault()
+    console.log(formState)
+  }
 
   return (
-    <div className={styles.searchBoxDiv}>
+    <form className={styles.searchBoxDiv} onSubmit={onSubmitHandler}>
       <Box className={styles.searchBox}>
         <CssTextField
+          required
+          id="departureLocation"
+          name="departureLocation"
           className={styles.searchBoxTextField}
           label="Departure Location"
           placeholder="ex: Iasi"
+          onChange={onChangeHandler}
         />
         <CssTextField
+          required
+          id="arrivalLocation"
+          name="arrivalLocation"
           className={styles.searchBoxTextField}
           label="Arrival Location"
           placeholder="ex: Suceava"
+          onChange={onChangeHandler}
         />
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <MobileDatePicker
-            variant="standard"
-            disablePast
-            label="Departure Date"
-            value={value}
-            onChange={(newValue) => {
-              setValue(newValue)
-            }}
-            renderInput={(params) => (
-              <CssTextField className={styles.searchBoxTextFieldDate} {...params} />
-            )}
-          />
-          <MobileTimePicker
-            label="Departure Time"
-            value={value}
-            onChange={(newValue) => {
-              setValue(newValue)
-            }}
-            renderInput={(params) => (
-              <CssTextField className={styles.searchBoxTextFieldDate} {...params} />
-            )}
-          />
-        </LocalizationProvider>
-        <Button className={styles.searchBoxButton} variant="outlined">
+        <CssTextField
+          className={styles.searchBoxTextFieldDate}
+          type="date"
+          id="departureDate"
+          name="departureDate"
+          onChange={onChangeHandler}
+        />
+        <CssTextField
+          className={styles.searchBoxTextFieldDate}
+          type="time"
+          id="departureTime"
+          name="departureTime"
+          onChange={onChangeHandler}
+        />
+
+        <Button className={styles.searchBoxButton} type="submit">
           search route
         </Button>
       </Box>
-    </div>
+    </form>
   )
 }
