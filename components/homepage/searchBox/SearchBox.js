@@ -3,6 +3,7 @@ import styles from "./SearchBox.module.scss"
 import { Box } from "@mui/system"
 import { Button } from "@mui/material"
 import CssTextField from "../../textfield/CustomeTextField"
+import Link from "next/link"
 
 const initialState = {
   departureLocation: "",
@@ -13,12 +14,16 @@ const initialState = {
 
 export default function SearchBox() {
   const [formState, setFormState] = useState(initialState)
+  const [path, setPath] = useState("/")
 
   const onChangeHandler = (e) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
     })
+    let path = `${formState.departureLocation.toLowerCase()}-${formState.arrivalLocation.toLocaleLowerCase()}`
+
+    setPath(`/routes/${path}`)
   }
 
   const onSubmitHandler = (e) => {
@@ -63,7 +68,9 @@ export default function SearchBox() {
         />
 
         <Button className={styles.searchBoxButton} type="submit">
-          search route
+          <Link href={path}>
+            <a>search route</a>
+          </Link>
         </Button>
       </Box>
     </form>
