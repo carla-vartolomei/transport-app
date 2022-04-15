@@ -4,6 +4,7 @@ import { Box } from "@mui/system"
 import { Button, TextField } from "@mui/material"
 import { LocalizationProvider, MobileDatePicker, MobileTimePicker } from "@mui/lab"
 import AdapterDateFns from "@mui/lab/AdapterDateFns"
+import CssTextField from "../../textfield/CustomeTextField"
 
 export default function SearchBox() {
   const [value, setValue] = React.useState(new Date())
@@ -11,51 +12,37 @@ export default function SearchBox() {
   return (
     <div className={styles.searchBoxDiv}>
       <Box className={styles.searchBox}>
-        <TextField
+        <CssTextField
           className={styles.searchBoxTextField}
-          label="📍 Departure Location"
+          label="Departure Location"
           placeholder="ex: Iasi"
-          color="secondary"
-          variant="standard"
         />
-        <TextField
+        <CssTextField
           className={styles.searchBoxTextField}
-          label="📍 Arrival Location"
+          label="Arrival Location"
           placeholder="ex: Suceava"
-          color="secondary"
-          variant="standard"
         />
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <MobileDatePicker
             variant="standard"
             disablePast
-            label="📅 Departure Date"
+            label="Departure Date"
             value={value}
             onChange={(newValue) => {
               setValue(newValue)
             }}
             renderInput={(params) => (
-              <TextField
-                variant="standard"
-                color="secondary"
-                className={styles.searchBoxTextFieldDate}
-                {...params}
-              />
+              <CssTextField className={styles.searchBoxTextFieldDate} {...params} />
             )}
           />
           <MobileTimePicker
-            label="⏰ Departure Time"
+            label="Departure Time"
             value={value}
             onChange={(newValue) => {
               setValue(newValue)
             }}
             renderInput={(params) => (
-              <TextField
-                variant="standard"
-                color="secondary"
-                className={styles.searchBoxTextFieldDate}
-                {...params}
-              />
+              <CssTextField className={styles.searchBoxTextFieldDate} {...params} />
             )}
           />
         </LocalizationProvider>
