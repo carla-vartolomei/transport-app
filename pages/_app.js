@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps, busRoutes }) {
       <Footer />
       <CookieConsent
         debug={true}
-        style={{ background: "#242222", textAlign: "left" }}
+        style={{ background: "#242222", textAlign: "left", paddingLeft: "1rem" }}
         buttonStyle={{
           background: "#6f22b3",
           color: "whitesmoke",
