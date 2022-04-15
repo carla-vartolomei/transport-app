@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Box, Button, TextField } from "@material-ui/core"
 import styles from "./Form.module.scss"
+import CssTextField from "../../textfield/CustomeTextField"
 
 const initialState = {
   firstName: "",
@@ -28,7 +29,7 @@ function Form() {
       <h3 className={styles.formTitle}>Leave us a message:</h3>
       <form className={styles.contactForm} onSubmit={onSubmitHandler}>
         <div className={styles.nameSection}>
-          <TextField
+          <CssTextField
             required
             className={styles.formInput}
             id="firstName"
@@ -36,10 +37,9 @@ function Form() {
             label="First Name"
             placeholder="ex: John"
             autoComplete="off"
-            variant="standard"
             onChange={onChangeHandler}
           />
-          <TextField
+          <CssTextField
             required
             className={styles.formInput}
             id="lastName"
@@ -47,11 +47,10 @@ function Form() {
             label="Last Name"
             placeholder="ex: Smith"
             autoComplete="off"
-            variant="standard"
             onChange={onChangeHandler}
           />
         </div>
-        <TextField
+        <CssTextField
           required
           className={styles.formInput}
           id="email"
@@ -60,10 +59,9 @@ function Form() {
           placeholder="ex: john.smith@gmail.com"
           type="email"
           autoComplete="off"
-          variant="standard"
           onChange={onChangeHandler}
         />
-        <TextField
+        <CssTextField
           required
           className={styles.formTextArea}
           id="message"
