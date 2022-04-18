@@ -19,23 +19,29 @@ function MyApp({ Component, pageProps, busRoutes }) {
       <Footer />
       <CookieConsent
         debug={true}
-        style={{ background: "#242222", textAlign: "left", paddingLeft: "1rem" }}
+        style={{
+          background: "#242222",
+          textAlign: "left",
+          paddingLeft: "1rem",
+          borderTop: " 0.1rem solid #6f22b3",
+        }}
         buttonStyle={{
           background: "#6f22b3",
           color: "whitesmoke",
           fontSize: "1rem",
-          borderRadius: "0.75rem",
+          borderRadius: "0.4rem",
           width: "75%",
           marginRight: "8rem",
+          padding: "0.75rem",
         }}
-        buttonText="I agree"
-        expires={1}
+        buttonText="OK"
+        expires={3}
       >
-        This site uses cookies. See our
-        <Link href="/">
-          <a style={{ color: "#6f22b3", fontWeight: "bold" }}> privacy policy </a>
+        This site uses cookies to provide necessary site functionality and improve
+        your experience. By using our website, you agree to our
+        <Link href="/privacy-policy">
+          <a style={{ color: "#6f22b3", fontWeight: "bold" }}> privacy policy. </a>
         </Link>
-        for more info.
       </CookieConsent>
     </>
   )

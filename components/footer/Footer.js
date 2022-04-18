@@ -25,7 +25,7 @@ function Footer() {
                 </Link>
               </li>
               <li className={styles.footerLinksListItem}>
-                <Link href="/">
+                <Link href="/privacy-policy">
                   <a>Privacy policy</a>
                 </Link>
               </li>
