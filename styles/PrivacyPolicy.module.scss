@@ -3,3 +3,36 @@
 .pageSubtitle {
   margin: 0 7rem;
 }
+
+.pageParagraph {
+  text-indent: 2rem;
+  text-align: justify;
+  padding: 0 5rem;
+}
+
+.pageList {
+  padding: 0 5rem;
+  padding-left: 10rem;
+  text-align: justify;
+}
+
+.pageLinks {
+  padding: 0 5rem;
+  padding-left: 10rem;
+  width: 50%;
+  margin-bottom: 3rem;
+  div {
+    border-bottom: 0.1rem $smoke-color solid;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+    a h1 {
+      padding-left: 1rem;
+      &:hover {
+        color: $purple-color;
+      }
+    }
+  }
+}
