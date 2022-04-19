@@ -7,6 +7,8 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined"
 import { Dialog, DialogContent, DialogTitle } from "@mui/material"
 import TicketInfo from "./TicketInfo"
 
+const ticketNumber = "TK" + Math.floor(Math.random() * 1000)
+
 export default function BookTickets({ startPoint, endPoint, price }) {
   const [state, setState] = useState("start")
 
@@ -48,7 +50,7 @@ export default function BookTickets({ startPoint, endPoint, price }) {
               changeForm={() => setState("show-info")}
             />
           )}
-          {state === "show-info" && <TicketInfo />}
+          {state === "show-info" && <TicketInfo id={ticketNumber} />}
         </DialogContent>
       </Dialog>
     </>
