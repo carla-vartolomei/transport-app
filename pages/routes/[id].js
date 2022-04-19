@@ -52,7 +52,7 @@ function Id({ busRouteSchedule }) {
         <iframe className={styles.routeMap} src={path} />
       </Container>
 
-      <BookTicket startPoint={startPoint} endPoint={endPoint} />
+      <BookTicket price={price} startPoint={startPoint} endPoint={endPoint} />
 
       <section className={styles.routeScheduleSectionRoot}>
         <div className={styles.routeScheduleSection}>

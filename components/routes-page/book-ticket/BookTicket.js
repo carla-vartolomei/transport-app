@@ -1,194 +1,56 @@
 import react, { useState } from "react"
-import axios from "axios"
 import Button from "@mui/material/Button"
-import Modal from "@mui/material/Modal"
 import styles from "./BookTicket.module.scss"
-import CssTextField from "../../textfield/CustomeTextField"
+import BookTicketForm from "./forms/BookTicketForm"
+import PaymentForm from "./forms/PaymentForm"
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined"
+import { Dialog, DialogContent, DialogTitle } from "@mui/material"
+import TicketInfo from "./TicketInfo"
 
-const postTicket = async (
-  firstName,
-  lastName,
-  phone,
-  email,
-  fromCity,
-  toCity,
-  departureDate,
-  departureTime,
-  comment
-) => {
-  const ticket = {
-    firstName,
-    lastName,
-    phone,
-    email,
-    fromCity,
-    toCity,
-    departureDate,
-    departureTime,
-    comment,
-  }
-  const { data } = await axios.post("/api/tickets", {
-    body: JSON.stringify(ticket),
-    headers: {
-      "Content-Type": "applicatipn/json",
-    },
-  })
-  console.log(data)
-  return data
-}
-
-export default function BookTickets({ startPoint, endPoint }) {
-  const initialState = {
-    firstName: "",
-    lastName: "",
-    phone: "",
-    email: "",
-    fromCity: startPoint,
-    toCity: endPoint,
-    departureDate: "",
-    departureTime: "",
-    comment: "",
-  }
-  const [formState, setFormState] = useState(initialState)
-
-  const onChangeHandler = (e) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const onSubmitHandler = (e) => {
-    e.preventDefault()
-    console.log(formState)
-    postTicket(
-      formState.firstName,
-      formState.lastName,
-      formState.phone,
-      formState.email,
-      formState.fromCity,
-      formState.toCity,
-      formState.departureDate,
-      formState.departureTime,
-      formState.comment
-    )
-  }
+export default function BookTickets({ startPoint, endPoint, price }) {
+  const [state, setState] = useState("start")
 
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
   return (
-    <div>
+    <>
       <div className={styles.bookRouteSection}>
         <Button variant="outlined" className={styles.bookRoute} onClick={handleOpen}>
           book now
         </Button>
       </div>
 
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        className={styles.bookModal}
-      >
-        <form className={styles.bookForm} onSubmit={onSubmitHandler}>
-          <h1>Book Tickets Form</h1>
-          <section className={styles.personalDetailsSection}>
-            <CssTextField
-              required
-              id="firstName"
-              name="firstName"
-              label="First Name"
-              placeholder="ex: John"
-              onChange={onChangeHandler}
-            />
-            <CssTextField
-              required
-              id="lastName"
-              name="lastName"
-              label="Last Name"
-              placeholder="ex: Smith"
-              onChange={onChangeHandler}
-            />
-            <CssTextField
-              required
-              id="phone"
-              name="phone"
-              label="Phone"
-              placeholder="ex: 0723 456 789"
-              type="tel"
-              onChange={onChangeHandler}
-            />
-            <CssTextField
-              required
-              id="email"
-              name="email"
-              label="E-mail"
-              placeholder="ex: john.smith@gmail.com"
-              type="email"
-              onChange={onChangeHandler}
-            />
-          </section>
-          <h3>Travel Details</h3>
-          <section className={styles.travelDetailsSection}>
-            <CssTextField
-              id="fromCity"
-              name="fromCity"
-              label="From City"
-              defaultValue={startPoint}
-              onChange={onChangeHandler}
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <CssTextField
-              id="toCity"
-              name="toCity"
-              label="To City"
-              defaultValue={endPoint}
-              onChange={onChangeHandler}
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <CssTextField
-              required
-              id="departureDate"
-              name="departureDate"
-              onChange={onChangeHandler}
-              type="date"
-              helperText="Please select departure date"
-            />
-            <CssTextField
-              required
-              id="departureTime"
-              name="departureTime"
-              onChange={onChangeHandler}
-              type="time"
-              helperText="Please select departure time"
-            />
-          </section>
-          <h3>Comments</h3>
-          <CssTextField
-            id="comment"
-            name="comment"
-            className={styles.commentSection}
-            placeholder="Leave your comment here"
-            multiline
-            maxRows={5}
-            onChange={onChangeHandler}
+      <Dialog open={open} onClose={handleClose} className={styles.bookModal}>
+        <DialogTitle className={styles.dialogTitle}>
+          <CloseOutlinedIcon
+            onClick={handleClose}
+            className={styles.dialogTitleIcon}
           />
-          <Button
-            className={styles.formSubmitButton}
-            variant="outlined"
-            type="submit"
-          >
-            go for pay
-          </Button>
-        </form>
-      </Modal>
-    </div>
+        </DialogTitle>
+
+        <DialogContent>
+          {state === "start" && (
+            <BookTicketForm
+              startPoint={startPoint}
+              endPoint={endPoint}
+              changeForm={() => setState("change-form")}
+            />
+          )}
+
+          {state === "change-form" && (
+            <PaymentForm
+              modalClose={handleClose}
+              startPoint={startPoint}
+              endPoint={endPoint}
+              price={price}
+              changeForm={() => setState("show-info")}
+            />
+          )}
+          {state === "show-info" && <TicketInfo />}
+        </DialogContent>
+      </Dialog>
+    </>
   )
 }
