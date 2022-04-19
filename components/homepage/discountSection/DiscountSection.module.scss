@@ -21,8 +21,14 @@
         }
       }
       .discountsAccordionDetails {
+        font-size: 1rem;
         text-indent: 1rem;
         color: $dark-color;
+        a span {
+          font-size: 0.8rem;
+          color: $purple-color;
+          font-weight: 700;
+        }
       }
     }
   }

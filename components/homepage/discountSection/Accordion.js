@@ -7,6 +7,7 @@ import {
 } from "@mui/material"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import styles from "./DiscountSection.module.scss"
+import Link from "next/link"
 
 function AccordionLayout({ accordionTitle, accordionDetails }) {
   return (
@@ -28,6 +29,11 @@ function AccordionLayout({ accordionTitle, accordionDetails }) {
             className={styles.discountsAccordionDetails}
           >
             {accordionDetails}
+            <Link href="/discounts">
+              <a>
+                <span>read more →</span>
+              </a>
+            </Link>
           </Typography>
         </AccordionDetails>
       </Accordion>

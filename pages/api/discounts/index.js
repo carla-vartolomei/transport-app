@@ -2,22 +2,21 @@ const discounts = [
   {
     title: "students",
     details:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+      "Students benefit a 20% discount on travel vouchers/ticket for all routes. ",
   },
   {
     title: "D.G.A.S.P.C",
     details:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+      "People with disabilities and their assistants benefit a 100% discount on travel vouchers/tickets. ",
   },
   {
     title: "retirees",
-    details:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+    details: "Retirees benefit a 50% discount on travel vouchers/tickets. ",
   },
   {
     title: "C.N.P.P",
     details:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+      "People with this type of coupons benefit a 100% discount on travel vouchers/tickets. ",
   },
 ]
 
