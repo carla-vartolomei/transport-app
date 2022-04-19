@@ -1,8 +1,41 @@
 import react, { useState } from "react"
+import axios from "axios"
 import Button from "@mui/material/Button"
 import Modal from "@mui/material/Modal"
 import styles from "./BookTicket.module.scss"
 import CssTextField from "../../textfield/CustomeTextField"
+
+const postTicket = async (
+  firstName,
+  lastName,
+  phone,
+  email,
+  fromCity,
+  toCity,
+  departureDate,
+  departureTime,
+  comment
+) => {
+  const ticket = {
+    firstName,
+    lastName,
+    phone,
+    email,
+    fromCity,
+    toCity,
+    departureDate,
+    departureTime,
+    comment,
+  }
+  const { data } = await axios.post("/api/tickets", {
+    body: JSON.stringify(ticket),
+    headers: {
+      "Content-Type": "applicatipn/json",
+    },
+  })
+  console.log(data)
+  return data
+}
 
 export default function BookTickets({ startPoint, endPoint }) {
   const initialState = {
@@ -28,6 +61,17 @@ export default function BookTickets({ startPoint, endPoint }) {
   const onSubmitHandler = (e) => {
     e.preventDefault()
     console.log(formState)
+    postTicket(
+      formState.firstName,
+      formState.lastName,
+      formState.phone,
+      formState.email,
+      formState.fromCity,
+      formState.toCity,
+      formState.departureDate,
+      formState.departureTime,
+      formState.comment
+    )
   }
 
   const [open, setOpen] = useState(false)
@@ -115,6 +159,7 @@ export default function BookTickets({ startPoint, endPoint }) {
               name="departureDate"
               onChange={onChangeHandler}
               type="date"
+              helperText="Please select departure date"
             />
             <CssTextField
               required
@@ -122,6 +167,7 @@ export default function BookTickets({ startPoint, endPoint }) {
               name="departureTime"
               onChange={onChangeHandler}
               type="time"
+              helperText="Please select departure time"
             />
           </section>
           <h3>Comments</h3>
@@ -139,7 +185,7 @@ export default function BookTickets({ startPoint, endPoint }) {
             variant="outlined"
             type="submit"
           >
-            submit
+            go for pay
           </Button>
         </form>
       </Modal>
