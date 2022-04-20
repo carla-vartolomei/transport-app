@@ -11,7 +11,7 @@ const postTicket = async (ticket) => {
     data: { ...ticket },
   })
 
-  console.log(data.id)
+  console.log(data)
 }
 
 export default function BookTicketForm({ startPoint, endPoint, changeForm }) {
