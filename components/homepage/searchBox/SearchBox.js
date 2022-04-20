@@ -40,8 +40,10 @@ export default function SearchBox() {
     })
     const from = formState.departureLocation.toLowerCase()
     const to = formState.arrivalLocation.split(" ").join("").toLowerCase()
-    let path = `${from}-${to}`
-    setPath(`/routes/${path}`)
+    if (from !== undefined && to !== undefined) {
+      let path = `${from}-${to}`
+      setPath(`/routes/${path}`)
+    }
   }
 
   const onSubmitHandler = (e) => {
@@ -49,8 +51,10 @@ export default function SearchBox() {
 
     const from = formState.departureLocation.toLowerCase()
     const to = formState.arrivalLocation.split(" ").join("").toLowerCase()
-    let path = `${from}-${to}`
-    setPath(`/routes/${path}`)
+    if (from !== undefined && to !== undefined) {
+      let path = `${from}-${to}`
+      setPath(`/routes/${path}`)
+    }
   }
 
   return (
@@ -87,6 +91,7 @@ export default function SearchBox() {
           ))}
         </CssTextField>
         <CssTextField
+          required
           className={styles.searchBoxTextFieldDate}
           type="date"
           id="departureDate"
@@ -95,6 +100,7 @@ export default function SearchBox() {
           helperText="Please select departure date"
         />
         <CssTextField
+          required
           className={styles.searchBoxTextFieldDate}
           type="time"
           id="departureTime"
