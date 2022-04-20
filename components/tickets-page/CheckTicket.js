@@ -75,7 +75,7 @@ export default function CheckTicket() {
             <Alert
               onClose={handleClose}
               severity="success"
-              sx={{ width: "100%", padding: "1rem", fontSize: "1.2rem" }}
+              sx={{ width: "100%", padding: "0.5rem", fontSize: "1.2rem" }}
             >
               {showMessage()}
             </Alert>
@@ -90,7 +90,7 @@ export default function CheckTicket() {
             <Alert
               onClose={handleClose}
               severity="error"
-              sx={{ width: "100%", padding: "1rem", fontSize: "1.2rem" }}
+              sx={{ width: "100%", padding: "0.5rem", fontSize: "1.2rem" }}
             >
               {showMessage()}
             </Alert>
