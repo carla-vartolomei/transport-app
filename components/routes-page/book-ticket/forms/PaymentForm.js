@@ -80,16 +80,11 @@ export default function PaymentForm({ startPoint, endPoint, price, changeForm })
         >
           <label className={styles.paymentLabel}>
             <Radio required value="Visa" className={styles.paymentRadio} />
-            <Image src={visa} alt="visa-icon" width="40rem" height="10rem" />
+            <Image src={visa} alt="visa-icon" quality="100" />
           </label>
           <label className={styles.paymentLabel}>
             <Radio required value="Mastercard" className={styles.paymentRadio} />
-            <Image
-              src={mastercard}
-              alt="mastercard-icon"
-              width="40rem"
-              height="9rem"
-            />
+            <Image src={mastercard} alt="mastercard-icon" quality="100" />
           </label>
         </RadioGroup>
       </section>
