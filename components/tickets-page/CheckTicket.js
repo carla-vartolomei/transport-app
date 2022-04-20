@@ -3,11 +3,12 @@ import styles from "../../styles/Tickets.module.scss"
 import CheckIcon from "@mui/icons-material/Check"
 import CssTextField from "../textfield/CustomeTextField"
 import { Button } from "@material-ui/core"
-import { Dialog, DialogContent, DialogContentText, DialogTitle } from "@mui/material"
+import { Alert, Snackbar } from "@mui/material"
 
 export default function CheckTicket() {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("")
+  const [validation, setValidation] = useState(false)
 
   const handleClickOpen = () => {
     setOpen(true)
@@ -23,13 +24,27 @@ export default function CheckTicket() {
   const submitHandler = (e) => {
     e.preventDefault()
     handleClickOpen()
+    if (
+      value[0] === "T" &&
+      value[1] === "K" &&
+      value.length >= 3 &&
+      value.length <= 5
+    )
+      setValidation(true)
+    else setValidation(false)
   }
 
   const showMessage = () => {
     const messageValid = `Your ticket "${value}" is valid!`
     const messageInvalid = `Your ticket "${value}" is not valid!`
 
-    if (value[0] === "T" && value[1] === "K") return messageValid
+    if (
+      value[0] === "T" &&
+      value[1] === "K" &&
+      value.length >= 3 &&
+      value.length <= 5
+    )
+      return messageValid
     else return messageInvalid
   }
 
@@ -50,27 +65,37 @@ export default function CheckTicket() {
         <Button className={styles.checkButton} type="submit">
           check
         </Button>
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle
-            id="alert-dialog-title"
-            sx={{ color: "#6f22b3", fontWeight: "bold" }}
+        {validation ? (
+          <Snackbar
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            open={open}
+            autoHideDuration={10000}
+            onClose={handleClose}
           >
-            {"Ticket checked"}
-          </DialogTitle>
-          <DialogContent>
-            <DialogContentText
-              id="alert-dialog-description"
-              sx={{ fontSize: "1.5rem" }}
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%", padding: "1rem", fontSize: "1.2rem" }}
             >
               {showMessage()}
-            </DialogContentText>
-          </DialogContent>
-        </Dialog>
+            </Alert>
+          </Snackbar>
+        ) : (
+          <Snackbar
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            open={open}
+            autoHideDuration={10000}
+            onClose={handleClose}
+          >
+            <Alert
+              onClose={handleClose}
+              severity="error"
+              sx={{ width: "100%", padding: "1rem", fontSize: "1.2rem" }}
+            >
+              {showMessage()}
+            </Alert>
+          </Snackbar>
+        )}
       </form>
     </>
   )
