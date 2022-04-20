@@ -4,16 +4,20 @@ import CloseIcon from "@mui/icons-material/Close"
 import CssTextField from "../textfield/CustomeTextField"
 import { Button, Tooltip } from "@material-ui/core"
 import {
+  Alert,
   Dialog,
   DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Snackbar,
 } from "@mui/material"
 
 export default function CheckTicket() {
   const [open, setOpen] = useState(false)
+  const [openSnackbar, setOpenSnackBar] = useState(false)
   const [value, setValue] = useState("")
+  const [validation, setValidation] = useState(false)
 
   const handleClickOpen = () => {
     setOpen(true)
@@ -21,6 +25,7 @@ export default function CheckTicket() {
 
   const handleClose = () => {
     setOpen(false)
+    setOpenSnackBar(false)
   }
   const handleChange = (e) => {
     setValue(e.target.value)
@@ -29,6 +34,32 @@ export default function CheckTicket() {
   const submitHandler = (e) => {
     e.preventDefault()
     handleClickOpen()
+    if (
+      value[0] === "T" &&
+      value[1] === "K" &&
+      value.length >= 3 &&
+      value.length <= 5
+    )
+      setValidation(true)
+    else setValidation(false)
+  }
+
+  const handleClick = () => {
+    setOpenSnackBar(true)
+  }
+
+  const showMessage = () => {
+    const messageValid = `Your ticket was canceled!`
+    const messageInvalid = `Your ticket "${value}" is not valid!`
+
+    if (
+      value[0] === "T" &&
+      value[1] === "K" &&
+      value.length >= 3 &&
+      value.length <= 5
+    )
+      return messageValid
+    else return messageInvalid
   }
 
   return (
@@ -48,37 +79,71 @@ export default function CheckTicket() {
         <Button className={styles.cancelButton} type="submit">
           cancel
         </Button>
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle
-            id="alert-dialog-title"
-            sx={{ color: "#c23227", fontWeight: "bold" }}
+        {validation ? (
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
           >
-            {"Cancel ticket"}
-          </DialogTitle>
-          <DialogContent>
-            <DialogContentText
-              id="alert-dialog-description"
-              sx={{ fontSize: "1.2rem" }}
+            <DialogTitle
+              id="alert-dialog-title"
+              sx={{ color: "#c23227", fontWeight: "bold" }}
             >
-              {
-                "If you continue, you will cancel your ticket and there is no way back! You want to continue?"
-              }
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} variant="outlined" color="error">
-              Cancel
-            </Button>
-            <Button onClick={handleClose} variant="outlined" color="error">
-              Continue
-            </Button>
-          </DialogActions>
-        </Dialog>
+              {"Cancel ticket"}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText
+                id="alert-dialog-description"
+                sx={{ fontSize: "1.2rem" }}
+              >
+                {
+                  "If you continue, you will cancel your ticket and there is no way back! You want to continue?"
+                }
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose} variant="outlined" color="error">
+                Cancel
+              </Button>
+              <Button onClick={handleClick} variant="outlined" color="error">
+                Continue
+              </Button>
+            </DialogActions>
+          </Dialog>
+        ) : (
+          <Snackbar
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            open={open}
+            autoHideDuration={10000}
+            onClose={handleClose}
+          >
+            <Alert
+              onClose={handleClose}
+              severity="error"
+              sx={{ width: "100%", padding: "0.75rem", fontSize: "1.2rem" }}
+            >
+              {showMessage()}
+            </Alert>
+          </Snackbar>
+        )}
+
+        {openSnackbar && (
+          <Snackbar
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            open={openSnackbar}
+            autoHideDuration={10000}
+            onClose={handleClose}
+          >
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%", padding: "0.75rem", fontSize: "1.2rem" }}
+            >
+              {showMessage()}
+            </Alert>
+          </Snackbar>
+        )}
       </form>
     </>
   )
