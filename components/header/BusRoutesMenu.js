@@ -57,9 +57,7 @@ export default function BusRoutesMenu({ name, path, startPoint, endPoint }) {
           return (
             <li key={index.toString()} {...props}>
               <Link href={path}>
-                <a>
-                  {startPoint.name} - {item.name}
-                </a>
+                {startPoint.name} - {item.name}
               </Link>
             </li>
           )

@@ -59,14 +59,27 @@ a {
 
 .MuiPaper-root.Navbar_navbarRoot__Gu8Vk {
   background-color: $dark-color;
+  color: white;
 }
 
-.MuiList-root.ceva {
-  padding: 1rem 2rem;
+.MuiList-root.drawerList {
+  padding: 0;
 }
 
 .MuiPaper-root.MuiDrawer-paper {
+  margin-top: 0;
   background-color: $dark-color;
-  color: $smoke-color;
+  color: white;
   text-transform: uppercase;
+  width: 35%;
+}
+
+.MuiListItem-gutters.drawerListItem {
+  padding: 1.5rem;
+}
+
+.MuiTreeItem-root.treeItemOne {
+  .MuiTreeItem-content {
+    padding: 0;
+  }
 }

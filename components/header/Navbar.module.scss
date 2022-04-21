@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 0.2rem;
   }
   .navbarOptions {
     display: flex;
@@ -44,4 +45,8 @@
     background-color: $purple-color;
     opacity: 0.9;
   }
+}
+
+.drawerListItem {
+  padding: 2rem;
 }

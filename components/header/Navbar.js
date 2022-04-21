@@ -36,7 +36,7 @@ export default function Navbar({ busRoutes }) {
             </Link>
           </IconButton>
           {isMobile ? (
-            <DrawerComponent />
+            <DrawerComponent startPoint={startPoint} endPoint={endPoint} />
           ) : (
             <Box className={styles.navbarOptions}>
               {pages.map((item, index) => {
