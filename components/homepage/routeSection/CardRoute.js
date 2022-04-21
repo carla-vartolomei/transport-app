@@ -29,7 +29,7 @@ export function CardRoute({
             .split(" ")
             .join("")}`}
         >
-          <a>more info</a>
+          more info
         </Link>
       </Button>
       {contactEndPoint ? (

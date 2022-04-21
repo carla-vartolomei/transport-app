@@ -17,3 +17,19 @@
     }
   }
 }
+
+@media (max-width: 699px) {
+  .pageDetailContainer {
+    margin: 0;
+    padding: 0 1.5rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .pageDetailContainer {
+    margin: 0;
+    padding: 0 4rem;
+    padding-bottom: 2rem;
+  }
+}
