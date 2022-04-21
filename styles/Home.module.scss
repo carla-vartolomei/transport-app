@@ -1,11 +1,24 @@
 @import "./colors.scss";
 
 .containerImage {
+  // padding: 0 15rem;
   width: 100%;
   display: flex;
-  justify-content: center;
+  align-items: center;
   transition: 0.5s ease-in-out;
   &:hover {
     transform: scale(1.05);
+  }
+}
+
+@media (max-width: 699px) {
+  .containerImage {
+    width: 100%;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .containerImage {
+    width: 100%;
   }
 }

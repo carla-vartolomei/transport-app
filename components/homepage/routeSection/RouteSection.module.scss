@@ -57,3 +57,26 @@
     }
   }
 }
+
+@media (max-width: 699px) {
+  .scrollBar {
+    overflow: initial;
+    .boxRoutes {
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .scrollBar {
+    overflow: initial;
+    .boxRoutes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

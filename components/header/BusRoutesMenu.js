@@ -38,7 +38,7 @@ export default function BusRoutesMenu({ name, path, startPoint, endPoint }) {
       >
         <li className={styles.routesMenuItemOne}>
           <Link href={path}>
-            <a>{name.toUpperCase()}</a>
+            <a>ALL {name.toUpperCase()}</a>
           </Link>
         </li>
         {endPoint.map((item, index) => {

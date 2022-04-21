@@ -8,21 +8,18 @@ function ContactSection({ contactData }) {
   const contactDescription = contactData.contactDescription
   const contactInfo = contactData.contactInfo
   return (
-    <div className={styles.contactSection}>
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <InfoCard
-            contactDescription={contactDescription}
-            contactInfo={contactInfo}
-          />
-        </Grid>
-        <Grid item xs={8}>
-          <div className={styles.mapSectionDiv}>
-            <iframe className={styles.mapSection} src={iframePath} />
-          </div>
-        </Grid>
-      </Grid>
-    </div>
+    <>
+      <section className={styles.contactSection}>
+        <InfoCard
+          contactDescription={contactDescription}
+          contactInfo={contactInfo}
+        />
+
+        <div className={styles.mapSectionDiv}>
+          <iframe className={styles.mapSection} src={iframePath} />
+        </div>
+      </section>
+    </>
   )
 }
 

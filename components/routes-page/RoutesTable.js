@@ -9,18 +9,18 @@ import Paper from "@mui/material/Paper"
 import styles from "../../styles/Routes.module.scss"
 import Link from "next/link"
 
-function createData(name, price, time, stations, races) {
-  return { name, price, time, stations, races }
+function createData(name, path, price, time, stations, races) {
+  return { name, path, price, time, stations, races }
 }
 
 const rows = [
-  createData("Iasi-Suceava", 38, "3h 03min", 51, 12),
-  createData("Iasi-Falticeni", 33, "2h 40min", 43, 5),
-  createData("Iasi-Husi", 28, "1h 31min", 33, 5),
-  createData("Iasi-Targu Neamt", 24, "2h 19min", 38, 12),
-  createData("Iasi-Pascani", 18, "1h 40min", 27, 42),
-  createData("Iasi-Targu Frumos", 10, "1h 19min", 23, 30),
-  createData("Iasi-Rediu ", 4, "26min", 12, 42),
+  createData("Iasi - Suceava", "iasi-suceava", 38, "3h 03min", 51, 12),
+  createData("Iasi - Falticeni", "iasi-falticeni", 33, "2h 40min", 43, 5),
+  createData("Iasi - Husi", "iasi-husi", 28, "1h 31min", 33, 5),
+  createData("Iasi - Targu Neamt", "iasi-targuneamt", 24, "2h 19min", 38, 12),
+  createData("Iasi - Pascani", "iasi-pascani", 18, "1h 40min", 27, 42),
+  createData("Iasi - Targu Frumos", "iasi-targufrumos", 10, "1h 19min", 23, 30),
+  createData("Iasi - Rediu ", "iasi-rediu", 4, "26min", 12, 42),
 ]
 
 export default function RoutesTable() {
@@ -52,7 +52,7 @@ export default function RoutesTable() {
                 scope="row"
                 className={styles.routesTableBodyHead}
               >
-                <Link href={`/routes/${row.name.toLowerCase()}`}>
+                <Link href={`/routes/${row.path}`}>
                   <a>{row.name}</a>
                 </Link>
               </TableCell>

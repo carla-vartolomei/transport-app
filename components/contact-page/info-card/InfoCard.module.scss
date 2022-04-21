@@ -32,3 +32,39 @@
     }
   }
 }
+
+@media (max-width: 699px) {
+  .contactDetails {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  .contactInfoList {
+    flex-direction: column;
+    width: 100%;
+    .contactInfoListItem {
+      flex-direction: column;
+      flex-wrap: wrap;
+      .contactInfoListItemText {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .contactDetails {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  .contactInfoList {
+    flex-direction: column;
+    width: 100%;
+    .contactInfoListItem {
+      flex-direction: column;
+      flex-wrap: wrap;
+      .contactInfoListItemText {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
