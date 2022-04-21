@@ -3,7 +3,6 @@ import { Button } from "@mui/material"
 import Link from "next/link"
 import Menu from "@mui/material/Menu"
 import styles from "./Navbar.module.scss"
-import { useRouter } from "next/router"
 
 export default function BusRoutesMenu({ name, path, startPoint, endPoint }) {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -15,12 +14,6 @@ export default function BusRoutesMenu({ name, path, startPoint, endPoint }) {
     setAnchorEl(null)
   }
 
-  const router = useRouter()
-  const goTo = (route) => {
-    console.log(route)
-    router.push(route)
-  }
-
   return (
     <div>
       <Button
@@ -30,7 +23,6 @@ export default function BusRoutesMenu({ name, path, startPoint, endPoint }) {
         aria-expanded={open ? "true" : undefined}
         onMouseOver={handleMouseOver}
         onClick={() => console.log("route")}
-        // onClick={() => goTo("/routes")}
         color="inherit"
       >
         <Link href={path}>
@@ -42,42 +34,35 @@ export default function BusRoutesMenu({ name, path, startPoint, endPoint }) {
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
-        // onMouseLeave={handleClose}
+        onBlur={handleClose}
       >
+        <li className={styles.routesMenuItemOne}>
+          <Link href={path}>
+            <a>{name.toUpperCase()}</a>
+          </Link>
+        </li>
         {endPoint.map((item, index) => {
           const path = `/routes/${startPoint.name.toLowerCase()}-${item.name
             .toLowerCase()
             .split(" ")
             .join("")}`
+          const props = {
+            className: styles.routesMenuItem,
+            onMouseLeave: null,
+            onClick: null,
+          }
+          if (index === endPoint.length - 1) props.onMouseLeave = handleClose
+          else props.onClick = handleClose
 
-          if (index === endPoint.length - 1)
-            return (
-              <li
-                key={index.toString()}
-                onMouseLeave={handleClose}
-                className={styles.routesMenuItem}
-              >
-                <Link href={path}>
-                  <a>
-                    {startPoint.name} - {item.name}
-                  </a>
-                </Link>
-              </li>
-            )
-          else
-            return (
-              <li
-                key={index.toString()}
-                className={styles.routesMenuItem}
-                onClick={handleClose}
-              >
-                <Link href={path}>
-                  <a>
-                    {startPoint.name} - {item.name}
-                  </a>
-                </Link>
-              </li>
-            )
+          return (
+            <li key={index.toString()} {...props}>
+              <Link href={path}>
+                <a>
+                  {startPoint.name} - {item.name}
+                </a>
+              </Link>
+            </li>
+          )
         })}
       </Menu>
     </div>

@@ -19,6 +19,18 @@
   padding: 0;
 }
 
+.routesMenuItemOne {
+  a {
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    background-color: $purple-color;
+  }
+  font-weight: 500;
+  // transition: background-color 0.3s ease-in-out;
+}
+
 .routesMenuItem {
   a {
     display: flex;
