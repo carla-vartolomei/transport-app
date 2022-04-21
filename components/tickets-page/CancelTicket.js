@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styles from "../../styles/Tickets.module.scss"
 import CloseIcon from "@mui/icons-material/Close"
 import CssTextField from "../textfield/CustomeTextField"
-import { Button, Tooltip } from "@material-ui/core"
+import { Button } from "@material-ui/core"
 import {
   Alert,
   Dialog,
@@ -35,8 +35,8 @@ export default function CheckTicket() {
     e.preventDefault()
     handleClickOpen()
     if (
-      value[0] === "T" &&
-      value[1] === "K" &&
+      value[0]?.toUpperCase() === "T" &&
+      value[1]?.toUpperCase() === "K" &&
       value.length >= 3 &&
       value.length <= 5
     )
@@ -53,8 +53,8 @@ export default function CheckTicket() {
     const messageInvalid = `Your ticket "${value}" is not valid!`
 
     if (
-      value[0] === "T" &&
-      value[1] === "K" &&
+      value[0]?.toUpperCase() === "T" &&
+      value[1]?.toUpperCase() === "K" &&
       value.length >= 3 &&
       value.length <= 5
     )

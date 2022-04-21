@@ -25,8 +25,8 @@ export default function CheckTicket() {
     e.preventDefault()
     handleClickOpen()
     if (
-      value[0] === "T" &&
-      value[1] === "K" &&
+      value[0]?.toUpperCase() === "T" &&
+      value[1]?.toUpperCase() === "K" &&
       value.length >= 3 &&
       value.length <= 5
     )
@@ -39,8 +39,8 @@ export default function CheckTicket() {
     const messageInvalid = `Your ticket "${value}" is not valid!`
 
     if (
-      value[0] === "T" &&
-      value[1] === "K" &&
+      value[0]?.toUpperCase() === "T" &&
+      value[1]?.toUpperCase() === "K" &&
       value.length >= 3 &&
       value.length <= 5
     )
