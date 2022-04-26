@@ -59,11 +59,11 @@ function Id({ busRouteSchedule }) {
           <section className={styles.startPointSection}>
             <h1>Departures from {startPoint}</h1>
             <p className={styles.busStation}>
-              <LocationOnOutlinedIcon />
+              <LocationOnOutlinedIcon fontSize="small" />
               <span>&quot;{startPointStation}&quot; Bus Station</span>
             </p>
-            <section className={styles.busStation}>
-              <PaidOutlinedIcon fontSize="medium" />
+            <section className={styles.priceSection}>
+              <PaidOutlinedIcon fontSize="small" />
               <div className={styles.routePrice}>
                 <span>{price}</span>
                 <sup>00</sup>
@@ -72,7 +72,7 @@ function Id({ busRouteSchedule }) {
             </section>
             <div className={styles.departureTime}>
               <div className={styles.departureTimeTitle}>
-                <AccessTimeOutlinedIcon />
+                <AccessTimeOutlinedIcon fontSize="small" />
                 <h3>departure time schedule</h3>
               </div>
               <div className={styles.departureTimeListSection}>
@@ -83,7 +83,7 @@ function Id({ busRouteSchedule }) {
                 </ul>
               </div>
               <div className={styles.contactSection}>
-                <PhoneOutlinedIcon />
+                <PhoneOutlinedIcon fontSize="small" />
                 <h4>Contact:</h4>
                 <span>{startPointContact}</span>
               </div>
@@ -92,11 +92,11 @@ function Id({ busRouteSchedule }) {
           <section className={styles.endPointSection}>
             <h1>Departures from {endPoint}</h1>
             <p className={styles.busStation}>
-              <LocationOnOutlinedIcon />
+              <LocationOnOutlinedIcon fontSize="small" />
               <span>&quot;{endPointStation}&quot; Bus Station</span>
             </p>
-            <section className={styles.busStation}>
-              <PaidOutlinedIcon fontSize="medium" />
+            <section className={styles.priceSection}>
+              <PaidOutlinedIcon fontSize="small" />
               <div className={styles.routePrice}>
                 <span>{price}</span>
                 <sup>00</sup>
@@ -105,7 +105,7 @@ function Id({ busRouteSchedule }) {
             </section>
             <div className={styles.departureTime}>
               <div className={styles.departureTimeTitle}>
-                <AccessTimeOutlinedIcon />
+                <AccessTimeOutlinedIcon fontSize="small" />
                 <h3>departure time schedule</h3>
               </div>
               <div className={styles.departureTimeListSection}>
@@ -116,7 +116,7 @@ function Id({ busRouteSchedule }) {
                 </ul>
               </div>
               <div className={styles.contactSection}>
-                <PhoneOutlinedIcon />
+                <PhoneOutlinedIcon fontSize="small" />
                 <h4>Contact:</h4>
                 <span>{endPointContact}</span>
               </div>

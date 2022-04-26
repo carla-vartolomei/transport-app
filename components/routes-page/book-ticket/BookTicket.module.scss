@@ -145,3 +145,16 @@
     }
   }
 }
+
+@media (max-width: 699px) {
+  .bookRouteSection {
+    .bookRoute {
+      width: 50%;
+      height: 100%;
+      padding: 0.5rem;
+      color: $purple-color;
+      border: 0.05rem $purple-color solid;
+      font-weight: bold;
+    }
+  }
+}

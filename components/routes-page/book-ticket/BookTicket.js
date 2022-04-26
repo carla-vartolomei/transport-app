@@ -23,36 +23,37 @@ export default function BookTickets({ startPoint, endPoint, price }) {
           book now
         </Button>
       </div>
-
-      <Dialog open={open} onClose={handleClose} className={styles.bookModal}>
-        <DialogTitle className={styles.dialogTitle}>
-          <CloseOutlinedIcon
-            onClick={handleClose}
-            className={styles.dialogTitleIcon}
-          />
-        </DialogTitle>
-
-        <DialogContent>
-          {state === "start" && (
-            <BookTicketForm
-              startPoint={startPoint}
-              endPoint={endPoint}
-              changeForm={() => setState("change-form")}
+      <div className={styles.bookRouteModalSection}>
+        <Dialog open={open} onClose={handleClose} className={styles.bookModal}>
+          <DialogTitle className={styles.dialogTitle}>
+            <CloseOutlinedIcon
+              onClick={handleClose}
+              className={styles.dialogTitleIcon}
             />
-          )}
+          </DialogTitle>
 
-          {state === "change-form" && (
-            <PaymentForm
-              modalClose={handleClose}
-              startPoint={startPoint}
-              endPoint={endPoint}
-              price={price}
-              changeForm={() => setState("show-info")}
-            />
-          )}
-          {state === "show-info" && <TicketInfo id={ticketNumber} />}
-        </DialogContent>
-      </Dialog>
+          <DialogContent>
+            {state === "start" && (
+              <BookTicketForm
+                startPoint={startPoint}
+                endPoint={endPoint}
+                changeForm={() => setState("change-form")}
+              />
+            )}
+
+            {state === "change-form" && (
+              <PaymentForm
+                modalClose={handleClose}
+                startPoint={startPoint}
+                endPoint={endPoint}
+                price={price}
+                changeForm={() => setState("show-info")}
+              />
+            )}
+            {state === "show-info" && <TicketInfo id={ticketNumber} />}
+          </DialogContent>
+        </Dialog>
+      </div>
     </>
   )
 }

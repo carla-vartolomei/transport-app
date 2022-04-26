@@ -23,10 +23,10 @@
   .routeScheduleSection {
     width: 80%;
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    // gap: 2rem;
+
+    display: flex;
+    flex-direction: row;
+
     margin: 1rem;
     padding: 1rem;
     background-color: $smoke-color;
@@ -44,7 +44,8 @@
       text-transform: uppercase;
       font-size: 1.5rem;
     }
-    .busStation {
+    .busStation,
+    .priceSection {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -154,6 +155,94 @@
     .routesTableBodyCell {
       text-align: center;
       font-size: 0.95rem;
+    }
+  }
+}
+
+@media (max-width: 699px) {
+  .routeScheduleSectionRoot {
+    .routeScheduleSection {
+      flex-direction: column;
+    }
+    .startPointSection {
+      border-right: 0;
+      border-bottom: 0.1rem $purple-color solid;
+    }
+    .startPointSection,
+    .endPointSection {
+      h1 {
+        font-size: 1rem;
+      }
+      .busStation,
+      .priceSection {
+        flex-direction: row;
+        gap: 0.1rem;
+        font-size: 0.75rem;
+      }
+      .routePrice {
+        gap: 0.1rem;
+        span {
+          font-size: 0.9rem;
+        }
+        sup {
+          font-size: 0.45rem;
+        }
+      }
+      .departureTime {
+        gap: 0.1rem;
+        .departureTimeTitle {
+          h3 {
+            font-size: 0.75rem;
+          }
+        }
+        .departureTimeListSection {
+          .departureTimeList {
+            font-size: 0.9rem;
+          }
+        }
+        .contactSection {
+          gap: 0.25rem;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .routeScheduleSectionRoot {
+    .startPointSection,
+    .endPointSection {
+      margin: 0;
+      padding: 0;
+      h1 {
+        text-align: center;
+        font-size: 1.2rem;
+      }
+      .busStation {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+      }
+
+      .departureTime {
+        gap: 0.1rem;
+        .departureTimeTitle {
+          h3 {
+            font-size: 1rem;
+          }
+        }
+        .departureTimeListSection {
+          .departureTimeList {
+            font-size: 1rem;
+          }
+        }
+        .contactSection {
+          gap: 0.3rem;
+          text-align: center;
+          font-size: 1rem;
+        }
+      }
     }
   }
 }

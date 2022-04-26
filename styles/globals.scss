@@ -36,11 +36,25 @@ a {
   border-bottom: 0.15rem $purple-color solid;
 }
 
+@media (max-width: 699px) {
+  .pageTitle {
+    width: 75%;
+    margin-left: 3rem;
+    // margin-right: 10rem;
+  }
+}
+
 .pageDescription {
   margin: 1.5rem 5rem;
   margin-bottom: 0;
   text-indent: 1.5rem;
   text-align: justify;
+}
+
+@media (max-width: 699px) {
+  .pageDescription {
+    margin: 1.5rem 3rem;
+  }
 }
 
 .not-found {
@@ -71,7 +85,7 @@ a {
   background-color: $dark-color;
   color: white;
   text-transform: uppercase;
-  width: 35%;
+  width: 50%;
 }
 
 .MuiListItem-gutters.drawerListItem {
