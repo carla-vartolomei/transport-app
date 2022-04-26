@@ -15,9 +15,10 @@
     width: 100%;
     height: 100%;
     .footerContainer {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      justify-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
       .footerLinksTitle {
         color: $purple-color;
         text-transform: uppercase;
@@ -60,16 +61,37 @@
 }
 
 @media (max-width: 699px) {
-  .footerLinksSection {
-    .footerContainer {
-      display: flex;
-      flex-direction: column;
+  .footerRoot {
+    .footerLinksSection {
+      .footerContainer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    .paymentsText {
+      padding-top: 1rem;
+    }
+    .paymentsIcons {
+      padding-top: 1rem;
+      width: 20%;
     }
   }
 }
 
 @media (min-width: 700px) and (max-width: 1199px) {
-  .footerContainer {
-    grid-template-rows: 1fr;
+  .footerRoot {
+    .footerLinksSection {
+      .footerContainer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    .paymentsText {
+      padding-top: 1rem;
+    }
+    .paymentsIcons {
+      padding-top: 1rem;
+      width: 10%;
+    }
   }
 }

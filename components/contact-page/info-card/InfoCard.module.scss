@@ -46,7 +46,7 @@
       display: grid;
       grid-template-columns: 1fr;
       .contactInfoListItemText {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
       }
     }
   }
@@ -59,13 +59,14 @@
   }
   .contactInfoList {
     padding: 0;
+    margin-left: 3rem;
     flex-direction: column;
     width: 100%;
     .contactInfoListItem {
       flex-direction: column;
       flex-wrap: wrap;
       .contactInfoListItemText {
-        font-size: 0.75rem;
+        font-size: 0.94rem;
       }
     }
   }
