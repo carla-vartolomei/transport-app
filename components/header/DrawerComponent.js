@@ -24,33 +24,37 @@ function DrawerComponent({ startPoint, endPoint }) {
               if (item === "routes")
                 return (
                   <ListItem key={index.toString()} className="drawerListItem">
-                    <TreeView
-                      aria-label="file system navigator"
-                      defaultCollapseIcon={<ExpandMoreIcon />}
-                      defaultExpandIcon={<ChevronRightIcon />}
-                    >
-                      <TreeItem nodeId="0" label={item} className="treeItemOne">
-                        {endPoint.map((item, index) => {
-                          const path = `/routes/${startPoint.name.toLowerCase()}-${item.name
-                            .toLowerCase()
-                            .split(" ")
-                            .join("")}`
-                          const nodeId = index + 1
-                          const label = startPoint.name + " - " + item.name
-                          return (
-                            <Link key={index.toString()} href={path} passHref>
-                              <a>
-                                <TreeItem
-                                  nodeId={nodeId}
-                                  label={label}
-                                  sx={{ padding: "0.5rem" }}
-                                />
-                              </a>
-                            </Link>
-                          )
-                        })}
-                      </TreeItem>
-                    </TreeView>
+                    <Link key={index.toString()} href={path} passHref>
+                      <a>
+                        <TreeView
+                          aria-label="file system navigator"
+                          defaultCollapseIcon={<ExpandMoreIcon />}
+                          defaultExpandIcon={<ChevronRightIcon />}
+                        >
+                          <TreeItem nodeId="0" label={item} className="treeItemOne">
+                            {endPoint.map((item, index) => {
+                              const path = `/routes/${startPoint.name.toLowerCase()}-${item.name
+                                .toLowerCase()
+                                .split(" ")
+                                .join("")}`
+                              const nodeId = index + 1
+                              const label = startPoint.name + " - " + item.name
+                              return (
+                                <Link key={index.toString()} href={path} passHref>
+                                  <a>
+                                    <TreeItem
+                                      nodeId={nodeId}
+                                      label={label}
+                                      sx={{ padding: "0.5rem" }}
+                                    />
+                                  </a>
+                                </Link>
+                              )
+                            })}
+                          </TreeItem>
+                        </TreeView>
+                      </a>
+                    </Link>
                   </ListItem>
                 )
               else
