@@ -39,11 +39,13 @@ function DrawerComponent({ startPoint, endPoint }) {
                           const label = startPoint.name + " - " + item.name
                           return (
                             <Link key={index.toString()} href={path} passHref>
-                              <TreeItem
-                                nodeId={nodeId}
-                                label={label}
-                                sx={{ padding: "0.5rem" }}
-                              />
+                              <a>
+                                <TreeItem
+                                  nodeId={nodeId}
+                                  label={label}
+                                  sx={{ padding: "0.5rem" }}
+                                />
+                              </a>
                             </Link>
                           )
                         })}

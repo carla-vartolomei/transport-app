@@ -37,7 +37,7 @@ export default function BusRoutesMenu({ name, path, startPoint, endPoint }) {
         onBlur={handleClose}
       >
         <li className={styles.routesMenuItemOne}>
-          <Link href={path}>
+          <Link href={path} passHref>
             <a>ALL {name.toUpperCase()}</a>
           </Link>
         </li>
@@ -56,8 +56,10 @@ export default function BusRoutesMenu({ name, path, startPoint, endPoint }) {
 
           return (
             <li key={index.toString()} {...props}>
-              <Link href={path}>
-                {startPoint.name} - {item.name}
+              <Link href={path} passHref>
+                <a>
+                  {startPoint.name} - {item.name}
+                </a>
               </Link>
             </li>
           )

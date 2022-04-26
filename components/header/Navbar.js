@@ -55,7 +55,9 @@ export default function Navbar({ busRoutes }) {
                 else
                   return (
                     <Button key={index.toString()} color="inherit">
-                      <Link href={path}>{item}</Link>
+                      <Link href={path} passHref>
+                        <a>{item}</a>
+                      </Link>
                     </Button>
                   )
               })}
