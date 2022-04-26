@@ -77,21 +77,3 @@
     }
   }
 }
-
-@media (min-width: 700px) and (max-width: 1199px) {
-  .footerRoot {
-    .footerLinksSection {
-      .footerContainer {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-    .paymentsText {
-      padding-top: 1rem;
-    }
-    .paymentsIcons {
-      padding-top: 1rem;
-      width: 10%;
-    }
-  }
-}
