@@ -43,3 +43,22 @@
     }
   }
 }
+
+@media (max-width: 699px) {
+  .pageDescription2 {
+    margin: 0.5rem 1.5rem;
+  }
+  .sectionTitle {
+    margin: 1rem;
+  }
+  .sectionInfo {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    p {
+      text-indent: 2.5rem;
+      li {
+        padding-left: 0;
+      }
+    }
+  }
+}
