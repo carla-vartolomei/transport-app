@@ -18,11 +18,15 @@
 .cancelSection {
   width: 50%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 0.5fr 0.1fr;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   margin-left: 10rem;
   gap: 0.2rem;
+  .checkField,
+  .cancelField {
+    flex-grow: 1;
+  }
 
   .checkButton,
   .cancelButton {
@@ -45,4 +49,28 @@
 
 .cancelSection {
   margin-bottom: 3rem;
+}
+
+@media (max-width: 699px) {
+  .pageSubtitle {
+    margin-right: 0;
+    margin-left: 2rem;
+    padding: 0;
+    gap: 0;
+    h2 {
+      width: 70%;
+    }
+  }
+
+  .checkSection,
+  .cancelSection {
+    margin-left: 4rem;
+    width: 70%;
+
+    gap: 0.2rem;
+    .checkField,
+    .cancelField {
+      flex-grow: 1;
+    }
+  }
 }
