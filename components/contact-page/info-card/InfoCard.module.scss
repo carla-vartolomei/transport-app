@@ -59,8 +59,9 @@
   }
   .contactInfoList {
     padding: 0;
-    margin-left: 3rem;
+    margin-left: 2rem;
     flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
     .contactInfoListItem {
       flex-direction: column;

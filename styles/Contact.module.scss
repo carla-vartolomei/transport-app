@@ -47,3 +47,24 @@
     }
   }
 }
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .contactRoot {
+    .backDiv {
+      p {
+        text-align: left;
+      }
+      .socialMediaIcons {
+        width: 35%;
+        margin-left: 2rem;
+        margin-top: 0;
+        gap: 0;
+      }
+    }
+    .infoContainer {
+      .infoBox {
+        width: 60%;
+      }
+    }
+  }
+}
