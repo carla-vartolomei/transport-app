@@ -70,6 +70,10 @@
 
 @media (max-width: 699px) {
   .sectionRoot {
+    .companySection {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
     .visionMissionSection,
     .companySection {
       flex-direction: column;
@@ -77,6 +81,14 @@
       .companyDataSection {
         border-right: 0;
         border-bottom: 0.1rem $purple-color solid;
+      }
+      .visionSection,
+      .missionSection {
+        p {
+          margin: 0.5rem 0;
+          padding: 0 1rem;
+          text-align: justify;
+        }
       }
       .imageSection,
       .companyDataSection {
