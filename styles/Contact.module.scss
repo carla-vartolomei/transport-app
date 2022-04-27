@@ -48,6 +48,41 @@
   }
 }
 
+@media (max-width: 699px) {
+  .contactRoot {
+    .backDiv {
+      height: auto;
+      h1 {
+        width: 100%;
+        padding: 1rem 2rem;
+        padding-bottom: 0;
+      }
+      p {
+        text-align: justify;
+        width: 90%;
+        padding-left: 2rem;
+      }
+      .socialMediaIcons {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 1.5rem;
+        justify-content: flex-start;
+        gap: 0;
+      }
+    }
+
+    .infoContainer {
+      margin: 1rem;
+      background-color: $smoke-color !important;
+      .infoBox {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
 @media (min-width: 700px) and (max-width: 1199px) {
   .contactRoot {
     .backDiv {
