@@ -38,10 +38,18 @@ export default function Home({ discounts, busRoutes, contactData, aboutData }) {
 }
 
 export const getStaticProps = async () => {
-  const { data: discounts } = await axios.get(`http://localhost:3000/api/discounts`)
-  const { data: busRoutes } = await axios.get(`http://localhost:3000/api/bus-routes`)
-  const { data: contactData } = await axios.get(`http://localhost:3000/api/contact`)
-  const { data: aboutData } = await axios.get(`http://localhost:3000/api/about`)
+  const { data: discounts } = await axios.get(
+    `https://transport-higeq2587-carla-vartolomei.vercel.app/api/discounts`
+  )
+  const { data: busRoutes } = await axios.get(
+    `https://transport-higeq2587-carla-vartolomei.vercel.app/api/bus-routes`
+  )
+  const { data: contactData } = await axios.get(
+    `https://transport-higeq2587-carla-vartolomei.vercel.app/api/contact`
+  )
+  const { data: aboutData } = await axios.get(
+    `https://transport-higeq2587-carla-vartolomei.vercel.app/api/about`
+  )
 
   return {
     props: {

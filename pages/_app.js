@@ -48,7 +48,9 @@ function MyApp({ Component, pageProps, busRoutes }) {
 }
 
 MyApp.getInitialProps = async () => {
-  const { data: busRoutes } = await axios.get(`http://localhost:3000/api/bus-routes`)
+  const { data: busRoutes } = await axios.get(
+    `https://transport-higeq2587-carla-vartolomei.vercel.app/api/bus-routes`
+  )
 
   return {
     busRoutes,
