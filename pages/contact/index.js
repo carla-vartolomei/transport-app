@@ -68,7 +68,9 @@ const socialMediaData = [
 ]
 
 export const getStaticProps = async () => {
-  const { data: contactData } = await axios.get(`${process.env.SERVER}/api/contact`)
+  const { data: contactData } = await axios.get(
+    "https://my-transport-api.herokuapp.com/contact-data"
+  )
 
   return {
     props: {

@@ -38,10 +38,18 @@ export default function Home({ discounts, busRoutes, contactData, aboutData }) {
 }
 
 export const getStaticProps = async () => {
-  const { data: discounts } = await axios.get(`${process.env.SERVER}/api/discounts`)
-  const { data: busRoutes } = await axios.get(`${process.env.SERVER}/api/bus-routes`)
-  const { data: contactData } = await axios.get(`${process.env.SERVER}/api/contact`)
-  const { data: aboutData } = await axios.get(`${process.env.SERVER}/api/about`)
+  const { data: discounts } = await axios.get(
+    "https://my-transport-api.herokuapp.com/discounts"
+  )
+  const { data: busRoutes } = await axios.get(
+    "https://my-transport-api.herokuapp.com/bus-routes"
+  )
+  const { data: contactData } = await axios.get(
+    "https://my-transport-api.herokuapp.com/contact-data"
+  )
+  const { data: aboutData } = await axios.get(
+    "https://my-transport-api.herokuapp.com/icon-section-list"
+  )
 
   return {
     props: {

@@ -48,7 +48,9 @@ function MyApp({ Component, pageProps, busRoutes }) {
 }
 
 MyApp.getInitialProps = async () => {
-  const { data: busRoutes } = await axios.get(`${process.env.SERVER}/api/bus-routes`)
+  const { data: busRoutes } = await axios.get(
+    "https://my-transport-api.herokuapp.com/bus-routes"
+  )
 
   return {
     busRoutes,

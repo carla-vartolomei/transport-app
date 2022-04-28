@@ -130,7 +130,7 @@ function Id({ busRouteSchedule }) {
 
 export const getStaticPaths = async () => {
   const { data: busRoutesSchedule } = await axios.get(
-    `${process.env.SERVER}/api/bus-routes-schedule`
+    "https://my-transport-api.herokuapp.com/bus-routes-schedule"
   )
 
   const paths = busRoutesSchedule.map((route) => ({
@@ -145,7 +145,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const { data: busRouteSchedule } = await axios.get(
-    `${process.env.SERVER}/api/bus-routes-schedule/${params.id}`
+    `https://my-transport-api.herokuapp.com/bus-routes-schedule/${params.id}`
   )
 
   return {
