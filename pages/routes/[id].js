@@ -130,7 +130,7 @@ function Id({ busRouteSchedule }) {
 
 export const getStaticPaths = async () => {
   const { data: busRoutesSchedule } = await axios.get(
-    `https://transport-higeq2587-carla-vartolomei.vercel.app/api/bus-routes-schedule`
+    `${process.env.SERVER}/api/bus-routes-schedule`
   )
 
   const paths = busRoutesSchedule.map((route) => ({
@@ -145,7 +145,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const { data: busRouteSchedule } = await axios.get(
-    `https://transport-higeq2587-carla-vartolomei.vercel.app/api/bus-routes-schedule/${params.id}`
+    `${process.env.SERVER}/api/bus-routes-schedule/${params.id}`
   )
 
   return {

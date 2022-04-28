@@ -68,9 +68,7 @@ const socialMediaData = [
 ]
 
 export const getStaticProps = async () => {
-  const { data: contactData } = await axios.get(
-    `https://transport-higeq2587-carla-vartolomei.vercel.app/api/contact`
-  )
+  const { data: contactData } = await axios.get(`${process.env.SERVER}/api/contact`)
 
   return {
     props: {
