@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps, busRoutes }) {
           padding: "0.75rem",
         }}
         buttonText="OK"
-        expires={3}
+        expires={365}
       >
         This site uses cookies to provide necessary site functionality and improve
         your experience. By using our website, you agree to our

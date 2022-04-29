@@ -12,6 +12,9 @@
   .navbarOptions {
     display: flex;
     flex-direction: row;
+    button {
+      padding: 1rem;
+    }
   }
 }
 

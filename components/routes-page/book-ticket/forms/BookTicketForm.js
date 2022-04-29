@@ -8,10 +8,8 @@ const postTicket = async (ticket) => {
   const { data } = await axios({
     method: "post",
     url: "https://my-transport-api.herokuapp.com/tickets",
-    data: { ...ticket },
+    data: { ...ticket, id: "TK" + Math.floor(Math.random() * 1000) },
   })
-
-  console.log(data)
 }
 
 export default function BookTicketForm({ startPoint, endPoint, changeForm }) {
@@ -140,9 +138,11 @@ export default function BookTicketForm({ startPoint, endPoint, changeForm }) {
         maxRows={5}
         onChange={onChangeHandler}
       />
-      <Button className={styles.formSubmitButton} variant="outlined" type="submit">
-        go for pay
-      </Button>
+      <div className={styles.submit}>
+        <Button className={styles.formSubmitButton} variant="outlined" type="submit">
+          go for pay
+        </Button>
+      </div>
     </form>
   )
 }

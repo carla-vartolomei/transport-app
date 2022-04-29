@@ -49,21 +49,49 @@ a {
   text-indent: 1.5rem;
   text-align: justify;
 }
+.MuiList-root.MuiList-padding.MuiMenu-list {
+  display: flex;
+  flex-direction: column;
+  .MuiButtonBase-root {
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    justify-content: left;
+  }
+}
 
 @media (max-width: 699px) {
   .pageDescription {
     margin: 0.5rem 1.5rem;
   }
+  .MuiList-root.MuiList-padding.MuiMenu-list {
+    display: flex;
+    flex-direction: column;
+    .MuiButtonBase-root {
+      padding: 1rem;
+      padding-left: 1.5rem;
+      justify-content: left;
+    }
+  }
+}
+@media (min-width: 700px) and (max-width: 1199px) {
+  .MuiList-root.MuiList-padding.MuiMenu-list {
+    display: flex;
+    flex-direction: column;
+    .MuiButtonBase-root {
+      padding: 1rem;
+      padding-left: 1.5rem;
+      justify-content: left;
+    }
+  }
 }
 
 .not-found {
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 12.98rem 0;
-  height: 100%;
-  width: 100%;
+  justify-content: center;
+  margin: 2rem;
+  margin-top: 3.25rem;
   a {
     color: $purple-color;
     font-weight: bold;

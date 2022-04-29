@@ -32,7 +32,7 @@ export function CardRoute({
           more info
         </Link>
       </Button>
-      {contactEndPoint ? (
+      {contactEndPoint != "undefined" ? (
         <>
           <p className={styles.contactRoute}>
             {`Contact ${startPoint} Office: ${contactStartPoint}`}

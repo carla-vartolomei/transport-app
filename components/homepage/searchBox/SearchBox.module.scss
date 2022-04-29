@@ -42,6 +42,13 @@
     margin: 0.5rem;
     .searchBox {
       flex-direction: column;
+      .searchBoxTextField {
+        ul {
+          display: flex;
+          flex-direction: column;
+          // flex-wrap: wrap;
+        }
+      }
       .searchBoxButton {
         width: 100%;
         height: 100%;

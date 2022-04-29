@@ -7,10 +7,12 @@
   .bookRoute {
     width: 20%;
     color: $purple-color;
-    border-color: $purple-color;
+    border: 0.1rem $purple-color solid;
+    border-radius: 0.3rem;
     font-weight: bold;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+    padding: 0.5rem;
   }
 }
 
@@ -98,13 +100,17 @@
   .commentSection {
     margin: 0.5rem 2rem;
   }
-  .formSubmitButton {
-    width: 30%;
-    align-self: center;
-    color: $dark-color;
-    border: 0.1rem $purple-color solid;
-    font-weight: bold;
-    margin: 2rem;
+  .submit {
+    padding: 1.5rem 2rem;
+    .formSubmitButton {
+      width: 100%;
+      align-self: center;
+      color: $dark-color;
+      border: 0.1rem $purple-color solid;
+      border-radius: 0.3rem;
+      padding: 0.5rem;
+      font-weight: bold;
+    }
   }
 }
 
@@ -147,6 +153,27 @@
 }
 
 @media (max-width: 699px) {
+  .bookModal {
+    .bookForm {
+      padding: 0 3vw;
+      h1 {
+        width: 80%;
+        font-size: 1.5rem;
+      }
+      .personalDetailsSection,
+      .travelDetailsSection,
+      .paymentDetailsSection,
+      .productsDetailsSection,
+      .cardDetails {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      .commentSection {
+        margin: 0.5rem 1rem;
+      }
+    }
+  }
   .bookRouteSection {
     .bookRoute {
       width: 50%;
@@ -157,6 +184,26 @@
       border-radius: 0.3rem;
       font-weight: bold;
       margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .submit {
+    padding: 0 2rem;
+  }
+  .bookModal .formSubmitButton {
+    width: 100%;
+    margin: 1rem 0 0 0;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .bookRouteSection {
+    .bookRoute {
+      width: 35%;
     }
   }
 }

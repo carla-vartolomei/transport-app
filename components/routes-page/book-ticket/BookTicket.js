@@ -6,15 +6,24 @@ import PaymentForm from "./forms/PaymentForm"
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined"
 import { Dialog, DialogContent, DialogTitle } from "@mui/material"
 import TicketInfo from "./TicketInfo"
-
-const ticketNumber = "TK" + Math.floor(Math.random() * 1000)
+import axios from "axios"
 
 export default function BookTickets({ startPoint, endPoint, price }) {
   const [state, setState] = useState("start")
 
+  const getTicketID = async () => {
+    const { data } = await axios.get(
+      "https://my-transport-api.herokuapp.com/tickets"
+    )
+    const { id } = data[data.length - 1]
+    setTicketID(id)
+  }
+
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
+
+  const [ticketID, setTicketID] = useState(undefined)
 
   return (
     <>
@@ -37,7 +46,9 @@ export default function BookTickets({ startPoint, endPoint, price }) {
               <BookTicketForm
                 startPoint={startPoint}
                 endPoint={endPoint}
-                changeForm={() => setState("change-form")}
+                changeForm={() => {
+                  setState("change-form")
+                }}
               />
             )}
 
@@ -47,10 +58,13 @@ export default function BookTickets({ startPoint, endPoint, price }) {
                 startPoint={startPoint}
                 endPoint={endPoint}
                 price={price}
-                changeForm={() => setState("show-info")}
+                changeForm={() => {
+                  getTicketID()
+                  setState("show-info")
+                }}
               />
             )}
-            {state === "show-info" && <TicketInfo id={ticketNumber} />}
+            {state === "show-info" && <TicketInfo id={ticketID} />}
           </DialogContent>
         </Dialog>
       </div>

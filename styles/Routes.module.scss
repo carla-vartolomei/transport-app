@@ -144,7 +144,6 @@
       background-color: $smoke-color;
     }
     .routesTableBodyHead {
-      // color: $purple-color;
       font-size: 1rem;
       font-weight: bold;
       padding: 1.5rem 2rem;
@@ -177,26 +176,18 @@
       .priceSection {
         flex-direction: row;
         gap: 0.1rem;
-        font-size: 0.75rem;
-      }
-      .routePrice {
-        gap: 0.1rem;
-        span {
-          font-size: 0.9rem;
-        }
-        sup {
-          font-size: 0.45rem;
-        }
+        font-size: 0.8rem;
       }
       .departureTime {
-        gap: 0.1rem;
         .departureTimeTitle {
           h3 {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
           }
         }
         .departureTimeListSection {
           .departureTimeList {
+            grid-template-rows: repeat(7, auto);
+            gap: 0.7rem;
             font-size: 0.9rem;
           }
         }
@@ -211,36 +202,27 @@
 
 @media (min-width: 700px) and (max-width: 1199px) {
   .routeScheduleSectionRoot {
+    .routeScheduleSection {
+      flex-direction: column;
+    }
+    .startPointSection {
+      border-right: 0;
+      border-bottom: 0.1rem $purple-color solid;
+    }
     .startPointSection,
     .endPointSection {
-      margin: 0;
-      padding: 0;
       h1 {
-        text-align: center;
         font-size: 1.2rem;
       }
-      .busStation {
-        flex-direction: column;
-        align-items: center;
-        font-size: 1rem;
+      .busStation,
+      .priceSection {
+        gap: 0.25rem;
       }
-
       .departureTime {
-        gap: 0.1rem;
         .departureTimeTitle {
           h3 {
             font-size: 1rem;
           }
-        }
-        .departureTimeListSection {
-          .departureTimeList {
-            font-size: 1rem;
-          }
-        }
-        .contactSection {
-          gap: 0.3rem;
-          text-align: center;
-          font-size: 1rem;
         }
       }
     }
