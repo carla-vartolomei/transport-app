@@ -92,7 +92,7 @@ export default function index() {
       </p>
       <h2 className={styles.pageSubtitle}>More info about cookies</h2>
       <p className={styles.pageParagraph}>
-        To understand these settings, the following links may be useful:
+        To understand these settings, the following purple links may be useful:
       </p>
       <section className={styles.pageLinks}>
         <div>

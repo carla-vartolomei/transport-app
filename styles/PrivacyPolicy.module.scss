@@ -18,7 +18,7 @@
 
 .pageLinks {
   padding: 0 5rem;
-  padding-left: 10rem;
+  padding-left: 6rem;
   width: 50%;
   margin-bottom: 3rem;
   div {
@@ -30,9 +30,7 @@
     gap: 0.4rem;
     a h1 {
       padding-left: 1rem;
-      &:hover {
-        color: $purple-color;
-      }
+      color: $purple-color;
     }
   }
 }
@@ -52,11 +50,13 @@
     padding-left: 5rem;
     padding-right: 4rem;
   }
+}
 
+@media (max-width: 1100px) {
   .pageLinks {
-    padding-left: 1rem;
+    padding-left: 3rem;
     padding-right: 0;
-    margin-left: 2rem;
+    margin: 0;
     width: 100%;
     div {
       width: 80%;
@@ -71,5 +71,11 @@
         margin-top: 0;
       }
     }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .pageLinks {
+    padding-left: 6rem;
   }
 }

@@ -1,7 +1,7 @@
 @import "./colors.scss";
 
 .contactRoot {
-  background-color: $smoke-color;
+  // background-color: $smoke-color;
   .backDiv {
     height: 20rem;
     background-color: $purple-color;
@@ -43,7 +43,7 @@
     display: flex !important;
     flex-direction: row-reverse;
     .infoBox {
-      background-color: $smoke-color;
+      background-color: white;
       width: 50%;
       margin-bottom: -16rem;
     }

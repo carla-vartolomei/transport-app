@@ -37,6 +37,8 @@
     }
   }
   .formSubmitButton {
+    width: 100%;
+    padding: 0.5rem;
     align-self: center;
     color: $dark-color;
     border: 0.1rem $purple-color solid;

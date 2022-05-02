@@ -48,7 +48,7 @@ export default function CheckTicket() {
         <CssTextField
           required
           className={styles.checkField}
-          label="Enter your ticket number"
+          label="Enter your ticket ID"
           onChange={handleChange}
           autoComplete="off"
         />
