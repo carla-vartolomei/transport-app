@@ -99,7 +99,7 @@ export default function PaymentForm({ startPoint, endPoint, price, changeForm })
           onChange={onChangeHandler}
           InputProps={{
             startAdornment: (
-              <InputAdornment position="start" sx={{ paddingRight: "1rem" }}>
+              <InputAdornment position="start" sx={{ paddingRight: "0.25rem" }}>
                 <CreditCardOutlinedIcon />
               </InputAdornment>
             ),
@@ -115,7 +115,7 @@ export default function PaymentForm({ startPoint, endPoint, price, changeForm })
           onChange={onChangeHandler}
           InputProps={{
             startAdornment: (
-              <InputAdornment position="start" sx={{ paddingRight: "1rem" }}>
+              <InputAdornment position="start" sx={{ paddingRight: "0.25rem" }}>
                 <PersonOutlineOutlinedIcon />
               </InputAdornment>
             ),
@@ -140,14 +140,16 @@ export default function PaymentForm({ startPoint, endPoint, price, changeForm })
           onChange={onChangeHandler}
         />
       </section>
-      <Button
-        className={styles.formSubmitButton}
-        variant="outlined"
-        type="submit"
-        onClick={handleClick}
-      >
-        confirm payment
-      </Button>
+      <div className={styles.submitSection}>
+        <Button
+          className={styles.formSubmitButton}
+          variant="outlined"
+          type="submit"
+          onClick={handleClick}
+        >
+          confirm payment
+        </Button>
+      </div>
     </form>
   )
 }

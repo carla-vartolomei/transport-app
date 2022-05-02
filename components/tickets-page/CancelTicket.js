@@ -12,6 +12,7 @@ import {
   DialogTitle,
   Snackbar,
 } from "@mui/material"
+import axios from "axios"
 
 export default function CheckTicket() {
   const [open, setOpen] = useState(false)
@@ -19,47 +20,42 @@ export default function CheckTicket() {
   const [value, setValue] = useState("")
   const [validation, setValidation] = useState(false)
 
-  const handleClickOpen = () => {
-    setOpen(true)
-  }
+  const handleClickOpen = () => setOpen(true)
 
   const handleClose = () => {
     setOpen(false)
     setOpenSnackBar(false)
   }
+  const checkTicketID = async (ticketID) => {
+    const { data } = await axios.get(
+      "https://my-transport-api.herokuapp.com/tickets"
+    )
+    const isTicketID = (await data.find((item) => item.id === ticketID)) || undefined
+    isTicketID ? setValidation(true) : setValidation(false)
+  }
+
+  const deleteTicket = async (ticketId) => {
+    const { data } = await axios.delete(
+      `https://my-transport-api.herokuapp.com/tickets/${ticketId}`
+    )
+  }
+
   const handleChange = (e) => {
-    setValue(e.target.value)
+    setValue(e.target.value), checkTicketID(e.target.value), handleClose()
   }
 
   const submitHandler = (e) => {
-    e.preventDefault()
-    handleClickOpen()
-    if (
-      value[0]?.toUpperCase() === "T" &&
-      value[1]?.toUpperCase() === "K" &&
-      value.length >= 3 &&
-      value.length <= 5
-    )
-      setValidation(true)
-    else setValidation(false)
+    e.preventDefault(), handleClickOpen(), checkTicketID(value)
   }
 
   const handleClick = () => {
-    setOpenSnackBar(true)
+    setOpenSnackBar(true), deleteTicket(value)
   }
 
   const showMessage = () => {
     const messageValid = `Your ticket was canceled!`
     const messageInvalid = `Your ticket "${value}" is not valid!`
-
-    if (
-      value[0]?.toUpperCase() === "T" &&
-      value[1]?.toUpperCase() === "K" &&
-      value.length >= 3 &&
-      value.length <= 5
-    )
-      return messageValid
-    else return messageInvalid
+    return validation ? messageValid : messageInvalid
   }
 
   return (

@@ -4,48 +4,38 @@ import CheckIcon from "@mui/icons-material/Check"
 import CssTextField from "../textfield/CustomeTextField"
 import { Button } from "@material-ui/core"
 import { Alert, Snackbar } from "@mui/material"
+import axios from "axios"
 
 export default function CheckTicket() {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("")
   const [validation, setValidation] = useState(false)
 
-  const handleClickOpen = () => {
-    setOpen(true)
+  const handleClickOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
+  const checkTicketID = async (ticketID) => {
+    const { data } = await axios.get(
+      "https://my-transport-api.herokuapp.com/tickets"
+    )
+    const isTicketID = (await data.find((item) => item.id === ticketID)) || undefined
+    isTicketID ? setValidation(true) : setValidation(false)
   }
 
-  const handleClose = () => {
-    setOpen(false)
-  }
   const handleChange = (e) => {
-    setValue(e.target.value)
+    setValue(e.target.value), checkTicketID(e.target.value), handleClose()
   }
 
   const submitHandler = (e) => {
     e.preventDefault()
     handleClickOpen()
-    if (
-      value[0]?.toUpperCase() === "T" &&
-      value[1]?.toUpperCase() === "K" &&
-      value.length >= 3 &&
-      value.length <= 5
-    )
-      setValidation(true)
-    else setValidation(false)
+    checkTicketID(value)
   }
 
   const showMessage = () => {
     const messageValid = `Your ticket "${value}" is valid!`
     const messageInvalid = `Your ticket "${value}" is not valid!`
-
-    if (
-      value[0]?.toUpperCase() === "T" &&
-      value[1]?.toUpperCase() === "K" &&
-      value.length >= 3 &&
-      value.length <= 5
-    )
-      return messageValid
-    else return messageInvalid
+    return validation ? messageValid : messageInvalid
   }
 
   return (

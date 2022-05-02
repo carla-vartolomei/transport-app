@@ -100,7 +100,7 @@
   .commentSection {
     margin: 0.5rem 2rem;
   }
-  .submit {
+  .submitSection {
     padding: 1.5rem 2rem;
     .formSubmitButton {
       width: 100%;
@@ -168,6 +168,19 @@
         width: 100%;
         grid-template-columns: 1fr;
         padding: 1rem;
+        ::placeholder {
+          font-size: 0.75rem;
+        }
+      }
+      .paymentMethodSection {
+        .paymentRadioGroup {
+          width: 100%;
+          height: 100%;
+          .paymentLabel {
+            width: 40%;
+            height: 100%;
+          }
+        }
       }
       .commentSection {
         margin: 0.5rem 1rem;
@@ -186,17 +199,31 @@
       margin-bottom: 0;
     }
   }
+  .ticketInfoCard {
+    .paymentMessage {
+      font-size: 0.7rem;
+      gap: 0.6rem;
+    }
+    .ticketMessage {
+      flex-direction: column;
+      font-size: 0.75rem;
+      span {
+        font-size: 1.25rem;
+      }
+    }
+  }
 }
 
 @media (max-width: 1199px) {
-  .submit {
-    padding: 0 2rem;
-  }
-  .bookModal .formSubmitButton {
-    width: 100%;
-    margin: 1rem 0 0 0;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
+  .bookModal .bookForm .submitSection {
+    padding: 0 1rem;
+    .formSubmitButton {
+      width: 100%;
+      margin: 1rem 0 0 0;
+      padding: 0.75rem;
+      border-radius: 0.3rem;
+      border: 0.05rem $purple-color solid;
+    }
   }
 }
 

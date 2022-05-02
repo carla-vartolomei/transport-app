@@ -3,7 +3,6 @@ import styles from "./BookTicket.module.scss"
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined"
 
 export default function ticketInfo({ id }) {
-  console.log("id", id)
   return (
     <div className={styles.ticketInfoCard}>
       <h1>ticket info</h1>

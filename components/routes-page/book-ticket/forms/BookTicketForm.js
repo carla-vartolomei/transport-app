@@ -60,6 +60,8 @@ export default function BookTicketForm({ startPoint, endPoint, changeForm }) {
           name="firstName"
           label="First Name"
           placeholder="ex: John"
+          defaultValue="John"
+          autoComplete="off"
           onChange={onChangeHandler}
         />
         <CssTextField
@@ -68,6 +70,8 @@ export default function BookTicketForm({ startPoint, endPoint, changeForm }) {
           name="lastName"
           label="Last Name"
           placeholder="ex: Smith"
+          defaultValue="Smith"
+          autoComplete="off"
           onChange={onChangeHandler}
         />
         <CssTextField
@@ -76,6 +80,8 @@ export default function BookTicketForm({ startPoint, endPoint, changeForm }) {
           name="phone"
           label="Phone"
           placeholder="ex: 0723 456 789"
+          defaultValue="0723456789"
+          autoComplete="off"
           type="tel"
           onChange={onChangeHandler}
         />
@@ -85,6 +91,8 @@ export default function BookTicketForm({ startPoint, endPoint, changeForm }) {
           name="email"
           label="E-mail"
           placeholder="ex: john.smith@gmail.com"
+          defaultValue="john.smith@gmail.com"
+          autoComplete="off"
           type="email"
           onChange={onChangeHandler}
         />
@@ -138,7 +146,7 @@ export default function BookTicketForm({ startPoint, endPoint, changeForm }) {
         maxRows={5}
         onChange={onChangeHandler}
       />
-      <div className={styles.submit}>
+      <div className={styles.submitSection}>
         <Button className={styles.formSubmitButton} variant="outlined" type="submit">
           go for pay
         </Button>
