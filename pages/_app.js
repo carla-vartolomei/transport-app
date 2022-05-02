@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps, busRoutes }) {
           }}
           buttonText="OK"
           expires={365}
-          onAccept={() => setCookies("cookie", "cookies")}
+          onAccept={() => setCookies("cookie", true)}
         >
           This site uses cookies to provide necessary site functionality and improve
           your experience. By using our website, you agree to our
