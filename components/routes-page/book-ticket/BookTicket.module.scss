@@ -185,6 +185,16 @@
       .commentSection {
         margin: 0.5rem 1rem;
       }
+      .submitSection {
+        padding: 0 1rem;
+        .formSubmitButton {
+          width: 100%;
+          margin: 1rem 0 0 0;
+          padding: 0.75rem;
+          border-radius: 0.3rem;
+          border: 0.05rem $purple-color solid;
+        }
+      }
     }
   }
   .bookRouteSection {
@@ -214,9 +224,9 @@
   }
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 700px) and (max-width: 1199px) {
   .bookModal .bookForm .submitSection {
-    padding: 0 1rem;
+    padding: 0 2rem;
     .formSubmitButton {
       width: 100%;
       margin: 1rem 0 0 0;
@@ -225,9 +235,6 @@
       border: 0.05rem $purple-color solid;
     }
   }
-}
-
-@media (min-width: 700px) and (max-width: 1199px) {
   .bookRouteSection {
     .bookRoute {
       width: 35%;

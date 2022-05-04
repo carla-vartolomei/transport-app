@@ -52,7 +52,7 @@ export default function BookTicketForm({ startPoint, endPoint, changeForm }) {
   }
   return (
     <form method="post" className={styles.bookForm} onSubmit={onSubmitHandler}>
-      <h1>Book Tickets Form</h1>
+      <h1>Book Tickets </h1>
       <section className={styles.personalDetailsSection}>
         <CssTextField
           required
