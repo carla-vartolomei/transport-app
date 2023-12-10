@@ -69,7 +69,7 @@ const socialMediaData = [
 
 export const getStaticProps = async () => {
   const { data: contactData } = await axios.get(
-    "https://my-transport-api.herokuapp.com/contact-data"
+    "https://my-super-app-ebae2b7a8c7a.herokuapp.com/contact-data"
   )
 
   return {

@@ -7,7 +7,7 @@ import CssTextField from "../../../textfield/CustomeTextField"
 const postTicket = async (ticket) => {
   const { data } = await axios({
     method: "post",
-    url: "https://my-transport-api.herokuapp.com/tickets",
+    url: "https://my-super-app-ebae2b7a8c7a.herokuapp.com/tickets",
     data: { ...ticket, id: "TK" + Math.floor(Math.random() * 1000) },
   })
 }
