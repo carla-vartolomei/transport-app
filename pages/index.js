@@ -39,16 +39,16 @@ export default function Home({ discounts, busRoutes, contactData, aboutData }) {
 
 export const getStaticProps = async () => {
   const { data: discounts } = await axios.get(
-    "https://my-super-app-ebae2b7a8c7a.herokuapp.com/discounts"
+    "https://transport-api-94aef37b9efd.herokuapp.com/discounts"
   )
   const { data: busRoutes } = await axios.get(
-    "https://my-super-app-ebae2b7a8c7a.herokuapp.com/bus-routes"
+    "https://transport-api-94aef37b9efd.herokuapp.com/bus-routes"
   )
   const { data: contactData } = await axios.get(
-    "https://my-super-app-ebae2b7a8c7a.herokuapp.com/contact-data"
+    "https://transport-api-94aef37b9efd.herokuapp.com/contact-data"
   )
   const { data: aboutData } = await axios.get(
-    "https://my-super-app-ebae2b7a8c7a.herokuapp.com/icon-section-list"
+    "https://transport-api-94aef37b9efd.herokuapp.com/icon-section-list"
   )
 
   return {

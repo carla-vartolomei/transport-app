@@ -13,7 +13,7 @@ export default function BookTickets({ startPoint, endPoint, price }) {
 
   const getTicketID = async () => {
     const { data } = await axios.get(
-      "https://my-super-app-ebae2b7a8c7a.herokuapp.com/tickets"
+      "https://transport-api-94aef37b9efd.herokuapp.com/tickets"
     )
     const { id } = data[data.length - 1]
     setTicketID(id)

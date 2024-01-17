@@ -130,7 +130,7 @@ function Id({ busRouteSchedule }) {
 
 export const getStaticPaths = async () => {
   const { data: busRoutesSchedule } = await axios.get(
-    "https://my-super-app-ebae2b7a8c7a.herokuapp.com/bus-routes-schedule"
+    "https://transport-api-94aef37b9efd.herokuapp.com/bus-routes-schedule"
   )
 
   const paths = busRoutesSchedule.map((route) => ({
@@ -145,7 +145,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const { data: busRouteSchedule } = await axios.get(
-    `https://my-super-app-ebae2b7a8c7a.herokuapp.com/bus-routes-schedule/${params.id}`
+    `https://transport-api-94aef37b9efd.herokuapp.com/bus-routes-schedule/${params.id}`
   )
 
   return {

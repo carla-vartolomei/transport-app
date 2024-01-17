@@ -16,7 +16,7 @@ export default function CheckTicket() {
 
   const checkTicketID = async (ticketID) => {
     const { data } = await axios.get(
-      "https://my-super-app-ebae2b7a8c7a.herokuapp.com/tickets"
+      "https://transport-api-94aef37b9efd.herokuapp.com/tickets"
     )
     const isTicketID = (await data.find((item) => item.id === ticketID)) || undefined
     isTicketID ? setValidation(true) : setValidation(false)
